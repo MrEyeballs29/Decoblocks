@@ -9,11 +9,10 @@ import mreyeballs29.decoblocks.recipes.ShapedCrafting;
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
     	ModItems.init();
-    	ShapedCrafting.Init();
     }
 
     public void init(FMLInitializationEvent event) {
-    	
+    	ShapedCrafting.init();
     }
 
     public void postInit(FMLPostInitializationEvent event) {
