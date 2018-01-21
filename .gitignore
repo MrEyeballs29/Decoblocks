@@ -30,3 +30,5 @@ gradlew.bat
 .project
 .settings/org.eclipse.jdt.core.prefs
 .classpath
+*.lock
+.gradle/2.14/taskArtifacts/cache.properties
