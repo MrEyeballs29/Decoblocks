@@ -10,8 +10,8 @@ public final class ModItems {
 	public static Item sand;
 	
 	public static final void init() {
-		clayball = new Clayball().setUnlocalizedName("clayball").setTextureName(Constants.TEXTURE_PREFIX + clayball.getUnlocalizedName().substring(5)).setCreativeTab(CreativeTabs.tabMaterials);
-		sand = new Sandypowder().setUnlocalizedName("sandpowder").setTextureName(Constants.TEXTURE_PREFIX + sand.getUnlocalizedName().substring(5)).setCreativeTab(CreativeTabs.tabMaterials);
+		clayball = new Clayball().setUnlocalizedName("clayball").setTextureName(Constants.TEXTURE_PREFIX + "clayball").setCreativeTab(CreativeTabs.tabMaterials);
+		sand = new Sandypowder().setUnlocalizedName("sandpowder").setTextureName(Constants.TEXTURE_PREFIX + "sandpowder").setCreativeTab(CreativeTabs.tabMaterials);
 		GameRegistry.registerItem(clayball, clayball.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(sand, sand.getUnlocalizedName().substring(5));
 	}
