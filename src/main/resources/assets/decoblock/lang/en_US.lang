@@ -1,1 +1,6 @@
+#Items
 item.clayball.name=Clayball
+item.sandpowder.name=Sand
+
+#Blocks
+tile.porcelainpowder.name=Porcelain Powder
