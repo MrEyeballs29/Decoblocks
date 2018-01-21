@@ -9,5 +9,6 @@ import net.minecraft.item.ItemStack;
 public final class ShapedCrafting {
 	public static final void init() {
 		GameRegistry.addRecipe(new ItemStack(ModItems.clayball, 4), new Object[]{"AB", "BA", 'A', Items.clay_ball, 'B', Blocks.dirt});
+		GameRegistry.addRecipe(new ItemStack(Blocks.sand), new Object[]{"AA", "AA", 'A', ModItems.sand});
 	}
 }
