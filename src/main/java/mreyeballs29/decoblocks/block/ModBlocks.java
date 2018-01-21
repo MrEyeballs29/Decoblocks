@@ -5,9 +5,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
 public class ModBlocks {
-	public static Block procelainpowder;
+	public static Block porcelainpowder;
 	
 	public static final void init() {
-		GameRegistry.registerBlock(procelainpowder = new ProcelainPowder("procelainpowder", Material.sand), procelainpowder.getUnlocalizedName().substring(5));
+		GameRegistry.registerBlock(porcelainpowder = new PorcelainPowder("porcelainpowder", Material.sand), porcelainpowder.getUnlocalizedName().substring(5));
 	}
 }

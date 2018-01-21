@@ -4,9 +4,9 @@ import mreyeballs29.decoblocks.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class ProcelainPowder extends Block {
+public class PorcelainPowder extends Block {
 
-	protected ProcelainPowder(String unlocalizedName, Material material) {
+	protected PorcelainPowder(String unlocalizedName, Material material) {
 		super(material);
 		this.setBlockName(unlocalizedName);
 		this.setBlockTextureName(Constants.TEXTURE_PREFIX + unlocalizedName);
