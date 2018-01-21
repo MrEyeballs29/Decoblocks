@@ -32,3 +32,4 @@ gradlew.bat
 .classpath
 *.lock
 .gradle/2.14/taskArtifacts/cache.properties
+build.bat
