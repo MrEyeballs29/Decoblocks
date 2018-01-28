@@ -7,6 +7,7 @@ import mreyeballs29.decoblocks.block.ModBlocks;
 import mreyeballs29.decoblocks.item.ModItems;
 import mreyeballs29.decoblocks.recipes.ShapedCrafting;
 import mreyeballs29.decoblocks.recipes.ShapelessCrafting;
+import mreyeballs29.decoblocks.recipes.Smelting;
 
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
@@ -17,6 +18,7 @@ public class CommonProxy {
     public void init(FMLInitializationEvent event) {
     	ShapedCrafting.init();
     	ShapelessCrafting.init();
+    	Smelting.init();
     }
 
     public void postInit(FMLPostInitializationEvent event) {
