@@ -1,6 +1,24 @@
 #Items
-item.clayball.name=Clayball
-item.sandpowder.name=Sand
+item.clay_round.name=Clay Ball
+item.sand_dust.name=Sand
 
 #Blocks
-tile.porcelainpowder.name=Porcelain Powder
+tile.porcelain_dust.name=Porcelain Powder
+tile.porcelain_block.name=Porcelain Block
+tile.color_porcelain_0.name=White Porcelain Block
+tile.color_porcelain_1.name=Orange Porcelain Block
+tile.color_porcelain_2.name=Magenta Porcelain Block
+tile.color_porcelain_3.name=Light Blue Porcelain Block
+tile.color_porcelain_4.name=Yellow Porcelain Block
+tile.color_porcelain_5.name=Lime Porcelain Block
+tile.color_porcelain_6.name=Pink Porcelain Block
+tile.color_porcelain_7.name=Gray Porcelain Block
+tile.color_porcelain_8.name=Light Gray Porcelain Block
+tile.color_porcelain_9.name=Cyan Porcelain Block
+tile.color_porcelain_10.name=Purple Porcelain Block
+tile.color_porcelain_11.name=Blue Porcelain Block
+tile.color_porcelain_12.name=Brown Porcelain Block
+tile.color_porcelain_13.name=Green Porcelain Block
+tile.color_porcelain_14.name=Red Porcelain Block
+tile.color_porcelain_15.name=Black Porcelain Block
+tile.cream.name=Cream Block
