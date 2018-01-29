@@ -44,7 +44,8 @@ public class ColorPorcelain extends Block {
 		return this.icons[meta];
 	}
 	
-	public int damagedDropped(int oldmeta) {
+	@Override
+	public int damageDropped(int oldmeta) {
 		return oldmeta;
 	}
 	
