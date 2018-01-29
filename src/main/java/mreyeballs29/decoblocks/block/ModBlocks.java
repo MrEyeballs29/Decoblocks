@@ -16,6 +16,6 @@ public class ModBlocks {
 		GameRegistry.registerBlock(porcelainpowder = new PorcelainPowder(Material.sand, Names.PORCLEAIN_DUST), Names.PORCLEAIN_DUST);
 		GameRegistry.registerBlock(porcelainblock = new PorcelainBlock(Material.rock, Names.PORCLEAIN_BLOCK), Names.PORCLEAIN_BLOCK);
 		GameRegistry.registerBlock(colorporcelain = new ColorPorcelain(Material.rock, Names.COLOR_PORCLEAIN), PorcelainMeta.class , Names.COLOR_PORCLEAIN);
-		GameRegistry.registerBlock(cream = new Cream(Material.rock, Names.CREAM), Names.CREAM);
+		GameRegistry.registerBlock(cream = new Cream(Material.craftedSnow, Names.CREAM), Names.CREAM);
 	}
 }
