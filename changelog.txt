@@ -1,3 +1,6 @@
+Version 1.1.1
+- Bug Fixes for Snow and Color Porcelain Block
+
 Version 1.1.0
 - Added Porcelain Block
 - Porcelain Powder has Gravity
