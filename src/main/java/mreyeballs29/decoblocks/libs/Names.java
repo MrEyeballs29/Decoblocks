@@ -10,4 +10,5 @@ public class Names {
 	// Items
 	public static final String CLAY_ROUND = "clay_round";
 	public static final String SAND_DUST = "sand_dust";
+	public static final String NUTRIENT_BAR ="nutrient_bar";
 }

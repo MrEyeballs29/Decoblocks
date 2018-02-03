@@ -1,6 +1,7 @@
 #Items
 item.clay_round.name=Clay Ball
 item.sand_dust.name=Sand
+item.nutrient_bar.name=Nutrient Bar
 
 #Blocks
 tile.porcelain_dust.name=Porcelain Powder
