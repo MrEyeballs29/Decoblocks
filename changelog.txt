@@ -1,3 +1,8 @@
+Version 1.1.2
+- Added Nutrient Bars for Food
+- Made Recipes More Efficient
+- Added Recipes for Nutrient Bars
+
 Version 1.1.1
 - Bug Fixes for Snow and Color Porcelain Block
 
