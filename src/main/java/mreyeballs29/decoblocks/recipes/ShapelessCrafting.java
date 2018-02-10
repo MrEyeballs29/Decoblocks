@@ -13,6 +13,7 @@ public final class ShapelessCrafting {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.nutrientbar, 8), new Object[] {ModBlocks.cream, Items.cooked_chicken});
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.nutrientbar, 8), new Object[] {ModBlocks.cream, Items.cooked_beef});
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.nutrientbar, 8), new Object[] {ModBlocks.cream, Items.cooked_porkchop});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.wheat, 1), new Object[] {Items.wheat_seeds});
 		for (int i = 0; i < 16; ++i) {
 			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.colorporcelain, 1, i), new Object[] {ModBlocks.porcelainblock, new ItemStack(Items.dye, 1, (~i & 15))});
 		}
