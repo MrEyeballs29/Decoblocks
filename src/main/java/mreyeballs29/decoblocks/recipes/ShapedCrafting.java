@@ -16,5 +16,9 @@ public final class ShapedCrafting {
 		for (int i = 0; i < 16; ++i) {
 			GameRegistry.addRecipe(new ItemStack(ModBlocks.colorporcelain, 8, i), new Object[] {"AAA", "ABA", "AAA", 'A', ModBlocks.porcelainblock, 'B', new ItemStack(Items.dye, 1, (~i & 15))});
 		}
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.specialstone, 1, 1), new Object[] {" A ", "ABA", " A ", 'A', Items.iron_ingot, 'B', new ItemStack(Blocks.stonebrick, 1, 0)});
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.specialstone, 4, 2), new Object[] {"AB", "BA", 'A', new ItemStack(Blocks.stonebrick, 1, 0), 'B', new ItemStack(ModBlocks.specialstone, 1, 0)});
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.specialstone, 4, 3), new Object[] {"AA", "AA", 'A', new ItemStack(ModBlocks.specialstone, 1, 2)});
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.specialstone, 4, 4), new Object[] {"AA", "AA", 'A', new ItemStack(Blocks.stonebrick, 1, 0)});
 	}
 }

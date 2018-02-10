@@ -17,6 +17,7 @@ public class Stone extends Block {
 		super(material);
 		this.setBlockName(name);
 		this.setBlockTextureName(Constants.TEXTURE_PREFIX + name);
+		this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setHardness(1.5F);
 		this.setResistance(10.0F);
 		this.setHarvestLevel("pickaxe", 0);
