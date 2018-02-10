@@ -4,9 +4,9 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlockWithMetadata;
 import net.minecraft.item.ItemStack;
 
-public class PorcelainMeta extends ItemBlockWithMetadata {
+public class MetaDataBlock extends ItemBlockWithMetadata {
 
-	public PorcelainMeta(Block block) {
+	public MetaDataBlock(Block block) {
 		super(block, block);
 	}
 	
