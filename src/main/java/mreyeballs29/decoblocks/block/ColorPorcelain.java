@@ -10,7 +10,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class ColorPorcelain extends Block {
 	protected ColorPorcelain(Material material, String Name) {
@@ -21,10 +20,6 @@ public class ColorPorcelain extends Block {
 		this.setResistance(5.0F);
 		this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setHarvestLevel("pickaxe", 0);
-	}
-	
-	public void addOreDict() {
-		OreDictionary.registerOre("blockPorcelain", this);
 	}
 
 	public IIcon[] icons = new IIcon[16];

@@ -4,7 +4,6 @@ import mreyeballs29.decoblocks.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class PorcelainBlock extends Block {
 
@@ -16,9 +15,5 @@ public class PorcelainBlock extends Block {
 		this.setResistance(5.0F);
 		this.setCreativeTab(CreativeTabs.tabBlock);
 		this.setHarvestLevel("pickaxe", 0);
-	}
-	
-	public void addOreDict() {
-		OreDictionary.registerOre("blockPorcelain", this);
 	}
 }
