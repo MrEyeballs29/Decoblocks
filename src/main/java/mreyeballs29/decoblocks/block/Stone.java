@@ -32,24 +32,14 @@ public class Stone extends Block {
     public float getBlockHardness(World world, int par2, int par3, int par4)
     {
         final int meta = world.getBlockMetadata(par2, par3, par4);
-        if (meta != 1) {
-            return 1.5F;
-        } else if (meta == 1) {
-        	return 3.0F;
-        }
-        return this.blockHardness;
+        return meta == 1 ? 3.0F : 1.5F;
     }
     
 	@Override
     public float getExplosionResistance(Entity par1Entity, World world, int x, int y, int z, double explosionX, double explosionY, double explosionZ)
     {
         int meta = world.getBlockMetadata(x, y, z);
-        if (meta != 1) {
-            return 10.0F;
-        } else if (meta == 1) {
-        	return 20.0F;
-        }
-        return blockResistance / 5.0F;
+        return (meta == 1 ? 60.0F : 30.0F) / 5.0F;
     }
 	
 	@Override
