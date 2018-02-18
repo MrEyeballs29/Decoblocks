@@ -1,3 +1,11 @@
+Version 1.2.0
+- Added the final 4 Variants to Stone
+- Made Reinforced Stone Bricks Creeper Proof
+- Fixed Wheat Seeds Recipe
+- Added More Recipes
+- Made 8 more stones have texture
+
+
 Version 1.1.3
 - Added More Variants to Stone
 - Added Recipes for Wheat Seeds
