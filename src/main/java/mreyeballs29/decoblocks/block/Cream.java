@@ -4,7 +4,6 @@ import mreyeballs29.decoblocks.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class Cream extends Block {
 
@@ -17,9 +16,5 @@ public class Cream extends Block {
 		this.setResistance(2.0F);
 		this.setStepSound(soundTypeSnow);
 		this.setHarvestLevel("shovel", 1);
-	}
-
-	public void addOreDict() {
-		OreDictionary.registerOre("blockCream", this);
 	}
 }
