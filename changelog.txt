@@ -1,3 +1,11 @@
+Version 1.2.0 R1
+- Added 15 more variants to porcelain block
+- Added 16 variants of laboratory block
+- Added 4 More Items
+- Added Recipes for 16 variants to laboratory block and porcelain block
+- Added the grand final 3 Variants to Stone
+- Adjusted Some Recipes
+
 Version 1.2.0
 - Added the final 4 Variants to Stone
 - Made Reinforced Stone Bricks Creeper Proof
