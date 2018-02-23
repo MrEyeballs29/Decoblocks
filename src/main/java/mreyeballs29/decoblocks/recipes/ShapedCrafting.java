@@ -38,7 +38,7 @@ public final class ShapedCrafting {
 			GameRegistry.addRecipe(new ItemStack(ArrayIt[i], 2, 15), new Object[] {" A", "A ", 'A', new ItemStack(ArrayIt[i], 1, 8)});
 			GameRegistry.addRecipe(new ItemStack(ArrayIt[i], 1, 0), new Object[] {"A", 'A', new ItemStack(ArrayIt[i], 0, 1)});
 		}
-		for (int i = 0; i < 16; ++i) {
+		for (int i = 2; i < 16; ++i) {
 			GameRegistry.addRecipe(new ItemStack(ModBlocks.labblock, 1, 0), new Object[] {"A", 'A', new ItemStack(ModBlocks.labblock, 0, i)});
 			GameRegistry.addRecipe(new ItemStack(ModBlocks.porcelainblock, 1, 0), new Object[] {"A", 'A', new ItemStack(ModBlocks.porcelainblock, 0, i)});
 		}
