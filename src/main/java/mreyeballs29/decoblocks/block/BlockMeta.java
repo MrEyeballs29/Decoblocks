@@ -14,41 +14,39 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-public class Stone extends Block {
+public class BlockMeta extends Block {
 
-	protected Stone(Material material, String name) {
+	protected BlockMeta(Material material, String name, String toolClass, int level) {
 		super(material);
 		this.setBlockName(name);
 		this.setBlockTextureName(Constants.TEXTURE_PREFIX + name);
-		this.setCreativeTab(CreativeTabs.tabBlock);
+		this.setHarvestLevel(toolClass, level);
 	}
 	
-	public IIcon[] icons = new IIcon[11];
-    /**
-    * Returns if metadata of stone is one then the hardness of that block would be doubled else the hardness would be base value.
-    */
+	public IIcon[] icons = new IIcon[16];
+	
     @Override
     public float getBlockHardness(World world, int par2, int par3, int par4)
     {
         final int meta = world.getBlockMetadata(par2, par3, par4);
-        return meta == 1 ? this.blockHardness * 2.0F : this.blockHardness;
+        if (meta == 1) {
+        	return this.blockHardness * 1.5F;
+        }
+        return meta == 6 ? (this.blockHardness * 2.0F) : this.blockHardness;
     }
-    /**
-    * Returns if metadata of stone is one then the resistance of that block would be doubled else the resistance would be base value.
-    */
+    
 	@Override
     public float getExplosionResistance(Entity par1Entity, World world, int x, int y, int z, double explosionX, double explosionY, double explosionZ)
     {
         final int meta = world.getBlockMetadata(x, y, z);
-        return meta == 1 ? this.blockResistance * 2.0F : this.blockResistance;
+        return meta == 6 ? (this.blockResistance * 2.0F) : this.blockResistance;
     }
-	/**
-	 * Registers 11 icons of the block
-	 */
+	
+	
 	@Override
 	public void registerBlockIcons(IIconRegister reg) {
 		for (int i = 0; i < icons.length; i++) {
-			this.icons[i] = reg.registerIcon(this.textureName + "_" + Names.STONE_TYPES[i]);
+			this.icons[i] = reg.registerIcon(this.textureName + "_" + Names.ALL_TYPES[i]);
 		}
 	}
 	
@@ -62,9 +60,6 @@ public class Stone extends Block {
 	
 	@Override
 	public int damageDropped(int meta) {
-		if (meta >= 11) {
-			meta = 0;
-		}
 		return meta;
 	}
 	
