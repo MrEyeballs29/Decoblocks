@@ -39,7 +39,7 @@ public class BlockMeta extends Block {
     public float getExplosionResistance(Entity par1Entity, World world, int x, int y, int z, double explosionX, double explosionY, double explosionZ)
     {
         final int meta = world.getBlockMetadata(x, y, z);
-        return meta == 6 ? (this.blockResistance * 2.0F) : this.blockResistance;
+        return (meta == 6 ? (this.blockResistance * 2.0F) : this.blockResistance) / 2.0F;
     }
 	
 	

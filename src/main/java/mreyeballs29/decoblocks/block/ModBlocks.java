@@ -21,7 +21,7 @@ public class ModBlocks {
 		GameRegistry.registerBlock(porcelainpowder.setHardness(0.6F).setResistance(0.6F).setStepSound(Block.soundTypeSand).setCreativeTab(CreativeTabs.tabBlock), Names.PORCLEAIN_DUST);
 		GameRegistry.registerBlock(porcelainblock.setHardness(1.2F).setResistance(4.2F).setCreativeTab(CreativeTabs.tabBlock), MetaDataBlock.class ,Names.PORCLEAIN_BLOCK);
 		GameRegistry.registerBlock(colorporcelain.setHardness(1.2F).setResistance(4.2F).setCreativeTab(CreativeTabs.tabBlock), MetaDataColors.class , Names.COLOR_PORCLEAIN);
-		GameRegistry.registerBlock(cream.setHardness(0.4F).setResistance(0.5F).setCreativeTab(CreativeTabs.tabBlock), Names.CREAM);
+		GameRegistry.registerBlock(cream.setHardness(0.4F).setResistance(0.5F).setStepSound(Block.soundTypeSnow).setCreativeTab(CreativeTabs.tabBlock), Names.CREAM);
 		GameRegistry.registerBlock(specialstone.setHardness(1.5F).setResistance(6.0F).setCreativeTab(CreativeTabs.tabBlock), MetaDataStoneBlock.class, Names.STONE);
 		GameRegistry.registerBlock(labblock.setHardness(2.0F).setResistance(9.0F).setStepSound(Block.soundTypeMetal).setLightLevel(0.6F).setCreativeTab(CreativeTabs.tabBlock), MetaDataBlock.class, Names.LAB);
 	}
