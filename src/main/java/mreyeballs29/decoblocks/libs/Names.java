@@ -119,4 +119,5 @@ public class Names {
 	public static final String NUTRIENT_BAR ="nutrient_bar";
 	public static final String HAMMER = "hammer";
 	public static final String POLISH = "polisher";
+	public static final String LAB_LAMP = "laboratory_lamp";
 }

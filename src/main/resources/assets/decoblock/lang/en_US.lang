@@ -60,6 +60,7 @@ tile.laboratory_block_square_bricks.name=Laboratory Square Bricks
 tile.laboratory_block_embossed.name=Embossed Laboratory Block
 tile.laboratory_block_diagonal_a.name=Laboratory Diagonal Tiles A
 tile.laboratory_block_diagonal_b.name=Laboratory Diagonal Tiles B
+tile.laboratory_lamp.name=Laboratory Light Block
 tile.stone_special_smooth.name=Smooth Stone
 tile.stone_special_reinforced_bricks.name=Reinforced Stone Bricks
 tile.stone_special_tiles.name=Stone Tiles

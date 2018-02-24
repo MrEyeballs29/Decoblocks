@@ -16,6 +16,7 @@ public class ModBlocks {
 	public static Block cream = new BlockBasic(Material.craftedSnow, Names.CREAM, "shovel", 1);
 	public static Block specialstone = new Stone(Material.rock, Names.STONE);
 	public static Block labblock = new BlockMeta(Material.iron, Names.LAB, "pickaxe", 1);
+	public static Block lablamp = new BlockBasic(Material.glass, Names.LAB_LAMP, "pickaxe", 1);
 	
 	public static final void init() {
 		GameRegistry.registerBlock(porcelainpowder.setHardness(0.6F).setResistance(0.6F).setStepSound(Block.soundTypeSand).setCreativeTab(CreativeTabs.tabBlock), Names.PORCLEAIN_DUST);
@@ -24,5 +25,6 @@ public class ModBlocks {
 		GameRegistry.registerBlock(cream.setHardness(0.4F).setResistance(0.5F).setStepSound(Block.soundTypeSnow).setCreativeTab(CreativeTabs.tabBlock), Names.CREAM);
 		GameRegistry.registerBlock(specialstone.setHardness(1.5F).setResistance(6.0F).setCreativeTab(CreativeTabs.tabBlock), MetaDataStoneBlock.class, Names.STONE);
 		GameRegistry.registerBlock(labblock.setHardness(2.0F).setResistance(9.0F).setStepSound(Block.soundTypeMetal).setLightLevel(0.6F).setCreativeTab(CreativeTabs.tabBlock), MetaDataBlock.class, Names.LAB);
+		GameRegistry.registerBlock(lablamp.setHardness(2.0F).setResistance(9.0F).setStepSound(Block.soundTypeGlass).setLightLevel(1.0F).setCreativeTab(CreativeTabs.tabBlock), Names.LAB_LAMP);
 	}
 }
