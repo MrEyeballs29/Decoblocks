@@ -21,6 +21,7 @@ public final class ShapedCrafting {
 		GameRegistry.addRecipe(new ItemStack(ModItems.forcelabplating, 4), new Object[] {"ABA", "CDC", "ABA", 'A', Items.iron_ingot, 'B', Items.quartz, 'C', ModItems.labplating, 'D', Items.diamond});
 		GameRegistry.addRecipe(new ItemStack(ModItems.hammer), new Object[] {"ABA", "ABA", " B ", 'A', Items.iron_ingot, 'B', Items.stick});
 		GameRegistry.addRecipe(new ItemStack(ModItems.polish), new Object[] {"A", "B", 'A', ModBlocks.cream, 'B', Items.bowl});
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.lablamp), new Object[] {"ABA", "B B", "ABA", 'A', ModItems.labplating, 'B', Items.glowstone_dust});
 		for (int i = 0; i < 16; ++i) {
 			GameRegistry.addRecipe(new ItemStack(ModBlocks.colorporcelain, 8, i), new Object[] {"AAA", "ABA", "AAA", 'A', ModBlocks.porcelainblock, 'B', new ItemStack(Items.dye, 1, (~i & 15))});
 		}
