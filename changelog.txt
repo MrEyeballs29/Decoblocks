@@ -1,3 +1,9 @@
+Version 1.2.0 R2
+- Added Laboratory Lamp (fits well)
+- Fixed Some Recipes
+- Added Recipes for Laboratory Lamp
+- Changed Recipes for Smelting
+
 Version 1.2.0 R1
 - Added 15 more variants to porcelain block
 - Added 16 variants of laboratory block
