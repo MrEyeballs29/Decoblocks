@@ -15,10 +15,10 @@ public final class Smelting {
 		for (int i = 2; i < 16; i++) {
 			if (i == 5) { continue; };
 			if (i == 6) { continue; };
-			GameRegistry.addSmelting(new ItemStack(ModBlocks.labblock, 1, i), new ItemStack(ModBlocks.specialstone, 1, 5), 0.1F);
-			GameRegistry.addSmelting(new ItemStack(ModBlocks.porcelainblock, 1, i), new ItemStack(ModBlocks.specialstone, 1, 5), 0.1F);
+			GameRegistry.addSmelting(new ItemStack(ModBlocks.labblock, 1, i), new ItemStack(ModBlocks.labblock, 1, 5), 0.1F);
+			GameRegistry.addSmelting(new ItemStack(ModBlocks.porcelainblock, 1, i), new ItemStack(ModBlocks.porcelainblock, 1, 5), 0.1F);
 		}
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.labblock, 1, 1), new ItemStack(ModBlocks.specialstone, 1, 0), 0.1F);
-		GameRegistry.addSmelting(new ItemStack(ModBlocks.porcelainblock, 1, 1), new ItemStack(ModBlocks.specialstone, 1, 0), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.labblock, 1, 1), new ItemStack(ModBlocks.labblock, 1, 0), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.porcelainblock, 1, 1), new ItemStack(ModBlocks.porcelainblock, 1, 0), 0.1F);
 	}
 }
