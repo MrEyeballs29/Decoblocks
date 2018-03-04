@@ -1,3 +1,6 @@
+Version 1.2.0 R3
+- Fixed Smelting Recipe for Unique Type Block
+
 Version 1.2.0 R2
 - Added Laboratory Lamp (fits well)
 - Fixed Some Recipes
