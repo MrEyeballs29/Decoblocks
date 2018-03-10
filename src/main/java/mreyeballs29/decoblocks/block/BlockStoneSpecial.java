@@ -14,9 +14,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-public class Stone extends Block {
+public class BlockStoneSpecial extends Block {
 
-	protected Stone(Material material, String name) {
+	protected BlockStoneSpecial(Material material, String name) {
 		super(material);
 		this.setBlockName(name);
 		this.setBlockTextureName(Constants.TEXTURE_PREFIX + name);
