@@ -1,4 +1,4 @@
-package mreyeballs29.decoblocks.block.meta;
+package mreyeballs29.decoblocks.item;
 
 import mreyeballs29.decoblocks.libs.Names;
 import net.minecraft.block.Block;
