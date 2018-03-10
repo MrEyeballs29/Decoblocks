@@ -1,16 +1,16 @@
 package mreyeballs29.decoblocks.recipes;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
+import micdoodle8.mods.galacticraft.planets.mars.blocks.MarsBlocks;
 import mreyeballs29.decoblocks.block.ModBlocks;
 import mreyeballs29.decoblocks.item.ModItems;
-import net.minecraft.block.Block;
+import mreyeballs29.decoblocks.libs.Patterns;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 public final class ShapedCrafting {
-	public static final Block[] ArrayIt = {ModBlocks.porcelainblock, ModBlocks.labblock};
-	
 	public static final void init() {
 		GameRegistry.addRecipe(new ItemStack(ModItems.clayball, 4), new Object[]{"AB", "BA", 'A', Items.clay_ball, 'B', Blocks.dirt});
 		GameRegistry.addRecipe(new ItemStack(Blocks.sand), new Object[]{"AA", "AA", 'A', ModItems.sand});
@@ -25,36 +25,11 @@ public final class ShapedCrafting {
 		for (int i = 0; i < 16; ++i) {
 			GameRegistry.addRecipe(new ItemStack(ModBlocks.colorporcelain, 8, i), new Object[] {"AAA", "ABA", "AAA", 'A', ModBlocks.porcelainblock, 'B', new ItemStack(Items.dye, 1, (~i & 15))});
 		}
-		for (int i = 0; i < ArrayIt.length; ++i) {
-			GameRegistry.addRecipe(new ItemStack(ArrayIt[i], 1, 2), new Object[] {"AA", "AA", 'A', new ItemStack(ArrayIt[i], 1, 0)});
-			GameRegistry.addRecipe(new ItemStack(ArrayIt[i], 4, 7), new Object[] {"AB", "BA", 'A', new ItemStack(ArrayIt[i], 1, 2), 'B', new ItemStack(ArrayIt[i], 1, 0)});
-			GameRegistry.addRecipe(new ItemStack(ArrayIt[i], 4, 7), new Object[] {"BA", "AB", 'A', new ItemStack(ArrayIt[i], 1, 2), 'B', new ItemStack(ArrayIt[i], 1, 0)});
-			GameRegistry.addRecipe(new ItemStack(ArrayIt[i], 4, 8), new Object[] {"AA", "AA", 'A', new ItemStack(ArrayIt[i], 1, 5)});
-			GameRegistry.addRecipe(new ItemStack(ArrayIt[i], 4, 9), new Object[] {"AA", "AA", 'A', new ItemStack(ArrayIt[i], 1, 2)});
-			GameRegistry.addRecipe(new ItemStack(ArrayIt[i], 2, 10), new Object[] {"A ", " A", 'A', new ItemStack(ArrayIt[i], 1, 5)});
-			GameRegistry.addRecipe(new ItemStack(ArrayIt[i], 2, 11), new Object[] {" A", "A ", 'A', new ItemStack(ArrayIt[i], 1, 5)});
-			GameRegistry.addRecipe(new ItemStack(ArrayIt[i], 4, 12), new Object[] {"AB", "BA", 'A', new ItemStack(ArrayIt[i], 1, 2), 'B', new ItemStack(ArrayIt[i], 1, 8)});
-			GameRegistry.addRecipe(new ItemStack(ArrayIt[i], 4, 12), new Object[] {"BA", "AB", 'A', new ItemStack(ArrayIt[i], 1, 2), 'B', new ItemStack(ArrayIt[i], 1, 8)});
-			GameRegistry.addRecipe(new ItemStack(ArrayIt[i], 2, 14), new Object[] {"A ", " A", 'A', new ItemStack(ArrayIt[i], 1, 8)});
-			GameRegistry.addRecipe(new ItemStack(ArrayIt[i], 2, 15), new Object[] {" A", "A ", 'A', new ItemStack(ArrayIt[i], 1, 8)});
-			GameRegistry.addRecipe(new ItemStack(ArrayIt[i], 1, 0), new Object[] {"A", 'A', new ItemStack(ArrayIt[i], 0, 1)});
+		Patterns.RockPatternShaper(ModBlocks.porcelainblock);
+		Patterns.StonePatternShaper(ModBlocks.specialstone, Blocks.stonebrick, Blocks.stone);
+		Patterns.PatternShaper(ModBlocks.labblock);
+		if(Loader.isModLoaded("GalacticraftMars")) {
+			Patterns.MarsPatternShaper(ModBlocks.marsstone, MarsBlocks.marsBlock);
 		}
-		for (int i = 2; i < 16; ++i) {
-			GameRegistry.addRecipe(new ItemStack(ModBlocks.labblock, 1, 0), new Object[] {"A", 'A', new ItemStack(ModBlocks.labblock, 0, i)});
-			GameRegistry.addRecipe(new ItemStack(ModBlocks.porcelainblock, 1, 0), new Object[] {"A", 'A', new ItemStack(ModBlocks.porcelainblock, 0, i)});
-		}
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.specialstone, 4, 1), new Object[] {"BAB", "A A", "BAB", 'A', Items.iron_ingot, 'B', new ItemStack(Blocks.stonebrick, 1, 0)});
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.specialstone, 4, 2), new Object[] {"AB", "BA", 'A', new ItemStack(Blocks.stonebrick, 1, 0), 'B', Blocks.stone});
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.specialstone, 4, 2), new Object[] {"BA", "AB", 'A', new ItemStack(Blocks.stonebrick, 1, 0), 'B', Blocks.stone});
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.specialstone, 4, 3), new Object[] {"AA", "AA", 'A', new ItemStack(ModBlocks.specialstone, 1, 2)});
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.specialstone, 4, 4), new Object[] {"AA", "AA", 'A', new ItemStack(Blocks.stonebrick, 1, 0)});
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.specialstone, 2, 5), new Object[] {"A ", " A", 'A', new ItemStack(ModBlocks.specialstone, 1, 0)});
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.specialstone, 2, 6), new Object[] {" A", "A ", 'A', new ItemStack(ModBlocks.specialstone, 1, 0)});
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.specialstone, 4, 7), new Object[] {"AB", "BA", 'A', new ItemStack(Blocks.stonebrick, 1, 0), 'B', new ItemStack(ModBlocks.specialstone, 1, 3)});
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.specialstone, 4, 7), new Object[] {"BA", "AB", 'A', new ItemStack(Blocks.stonebrick, 1, 0), 'B', new ItemStack(ModBlocks.specialstone, 1, 3)});
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.specialstone, 4, 9), new Object[] {"A ", " A", 'A', new ItemStack(ModBlocks.specialstone, 1, 2)});
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.specialstone, 4, 10), new Object[] {" A", "A ", 'A', new ItemStack(ModBlocks.specialstone, 1, 2)});
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.porcelainblock, 4, 6), new Object[] {"BAB", "A A", "BAB", 'A', Items.iron_ingot, 'B', new ItemStack(ModBlocks.porcelainblock, 1, 2)});
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.labblock, 1, 6), new Object[] {"BAB", "A A", "BAB", 'A', ModItems.forcelabplating, 'B', new ItemStack(ModBlocks.labblock, 1, 2)});
 	}
 }
