@@ -8,6 +8,7 @@ public class Names {
 	public static final String COLOR_PORCLEAIN = "color_porcelain";
 	public static final String STONE = "stone_special";
 	public static final String LAB = "laboratory_block";
+	public static final String MARS = "mars_stone";
 	
 	// Block Arrays
 	public static final String[] COLORS = new String[] {
@@ -42,11 +43,12 @@ public class Names {
 			"diagonal_b"
 	};
 	public static final String[] SANDSTONE_TYPES = new String [] {
-			"crushed",
+			"rough",
 			"bricks",
 			"cracked_bricks",
 			"chiseled_bricks",
 			"smooth", 
+			"reinforced_bricks", 
 			"tiles", 
 			"small_tiles", 
 			"small_bricks", 
@@ -58,13 +60,13 @@ public class Names {
 			"diagonal_b"
 	};
 	public static final String[] OBSIDIAN_TYPES = new String[] {
-			"crushed",
+			"cobblestone",
 			"lava",
 			"bricks",
 			"lava_bricks",
 			"cracked_bricks",
 			"chiseled_bricks",
-			"smooth", 
+			"smooth",  
 			"tiles", 
 			"small_tiles", 
 			"small_bricks", 
@@ -75,8 +77,24 @@ public class Names {
 			"diagonal_a",
 			"diagonal_b"
 	};
-	public static final String[] TYPES = new String[] {
-			"crushed",
+	public static final String[] ROCK_TYPES = new String[] {
+			"normal", // 0
+			"bricks", // 1
+			"cracked_bricks", // 2
+			"chiseled_bricks", // 3
+			"smooth",  // 4
+			"reinforced_bricks", // 5
+			"tiles", // 6
+			"small_tiles", // 7 
+			"small_bricks", // 8
+			"windmill_bricks_a", // 9 
+			"windmill_bricks_b", // 10
+			"square_bricks", // 11
+			"embossed", // 12
+			"diagonal_a", // 13
+			"diagonal_b" // 14
+	};
+	public static final String[] ROCK_TYPES2 = new String[] {
 			"bricks",
 			"cracked_bricks",
 			"chiseled_bricks",
@@ -91,24 +109,39 @@ public class Names {
 			"embossed",
 			"diagonal_a",
 			"diagonal_b"
+	};
+	public static final String[] MARS_TYPES = new String[] {
+			"mossy", // 0
+			"bricks", // 1
+			"mossy_bricks", // 2
+			"cracked_bricks", // 3
+			"chiseled_bricks", // 4
+			"smooth", // 5
+			"reinforced_bricks", // 6
+			"tiles", // 7 
+			"small_tiles", // 8
+			"small_bricks", // 9
+			"windmill_bricks_a", // 10 
+			"windmill_bricks_b", // 11
+			"square_bricks", // 12
+			"embossed", // 13
+			"diagonal_a", // 14
+			"diagonal_b" // 15
 	};
 	public static final String[] ALL_TYPES = new String[] {
-			"normal",
-			"crushed",
-			"bricks",
-			"cracked_bricks",
-			"chiseled_bricks",
-			"smooth", 
-			"reinforced_bricks", 
-			"tiles", 
-			"small_tiles", 
-			"small_bricks", 
-			"windmill_bricks_a", 
-			"windmill_bricks_b", 
-			"square_bricks",
-			"embossed",
-			"diagonal_a",
-			"diagonal_b"
+			"normal", // 0
+			"bricks", // 1
+			"chiseled_bricks", //2
+			"smooth",  // 3
+			"tiles", // 4
+			"small_tiles", // 5 
+			"small_bricks", // 6
+			"windmill_bricks_a", // 7 
+			"windmill_bricks_b", // 8
+			"square_bricks", // 9
+			"embossed", //10
+			"diagonal_a", //11
+			"diagonal_b" //12
 	};
 	
 	// Items
