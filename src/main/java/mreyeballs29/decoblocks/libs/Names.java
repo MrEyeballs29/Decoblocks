@@ -9,6 +9,7 @@ public class Names {
 	public static final String STONE = "stone_special";
 	public static final String LAB = "laboratory_block";
 	public static final String MARS = "mars_stone";
+	public static final String MOON_ORE = "moonore2";
 	
 	// Block Arrays
 	public static final String[] COLORS = new String[] {
@@ -142,6 +143,12 @@ public class Names {
 			"embossed", //10
 			"diagonal_a", //11
 			"diagonal_b" //12
+	};
+	public static final String[] ORES = new String[] {
+			"iron",
+			"gold",
+			"lead",
+			"nickel"
 	};
 	
 	// Items
