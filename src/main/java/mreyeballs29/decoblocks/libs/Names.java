@@ -160,4 +160,51 @@ public class Names {
 	public static final String HAMMER = "hammer";
 	public static final String POLISH = "polisher";
 	public static final String LAB_LAMP = "laboratory_lamp";
+	public static final String INGOT = "ingot";
+	public static final String NUGGET = "nugget";
+	
+	// Item Array
+	public static final String[] METALS = new String[] {
+			"lead",
+			"nickel",
+			"steel",
+			"bronze",
+			"copper",
+			"tin",
+			"silver",
+			"aluminium",
+			"cobalt",
+			"tungsten",
+			"zinc",
+			"brass",
+			"invar",
+			"electrum",
+			"constantan",
+			"chromium"
+	};
+	
+	public static final String[] METALS2 = new String[] {
+			"iron",
+			"lead",
+			"nickel",
+			"steel",
+			"bronze",
+			"copper",
+			"tin",
+			"silver",
+			"aluminium",
+			"cobalt",
+			"tungsten",
+			"zinc",
+			"brass",
+			"invar",
+			"electrum",
+			"constantan",
+			"chromium"
+	};
+	
+	// String Method
+	public static String TitleCase(String name) {
+		return name.substring(0, 1).toUpperCase() + name.substring(1);
+	}
 }
