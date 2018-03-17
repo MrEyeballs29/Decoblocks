@@ -29,14 +29,14 @@ public class BlockMarsSpecial extends Block {
     public float getBlockHardness(World world, int par2, int par3, int par4)
     {
         final int meta = world.getBlockMetadata(par2, par3, par4);
-        return meta == 5 ? (this.blockHardness * 2.0F) : this.blockHardness;
+        return meta == 6 ? (this.blockHardness * 2.0F) : this.blockHardness;
     }
     
 	@Override
     public float getExplosionResistance(Entity par1Entity, World world, int x, int y, int z, double explosionX, double explosionY, double explosionZ)
     {
         final int meta = world.getBlockMetadata(x, y, z);
-        return (meta == 5 ? (this.blockResistance * 2.0F) : this.blockResistance) / 2.0F;
+        return (meta == 6 ? (this.blockResistance * 2.0F) : this.blockResistance) / 2.0F;
     }
 	
 	
