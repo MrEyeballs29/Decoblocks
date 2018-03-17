@@ -1,6 +1,7 @@
 package mreyeballs29.decoblocks.libs;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import micdoodle8.mods.galacticraft.planets.mars.items.MarsItems;
 import mreyeballs29.decoblocks.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
@@ -70,14 +71,14 @@ public class Patterns {
 	}
 	
 	public static void MarsPatternShaper(Block block, Block block2) {
-		GameRegistry.addRecipe(new ItemStack(block, 1, 6), new Object[] {" B ", "BAB", " B ", 'A', new ItemStack(block, 1, 1), 'B', Items.iron_ingot});
-		GameRegistry.addRecipe(new ItemStack(block, 4, 1), new Object[] {"AA", "AA", 'A', new ItemStack(block2, 1, 8)});
-		GameRegistry.addRecipe(new ItemStack(block, 4, 7), new Object[] {"AB", "BA", 'A', new ItemStack(block, 1, 1), 'B', new ItemStack(block2, 1, 8)});
-		GameRegistry.addRecipe(new ItemStack(block, 4, 7), new Object[] {"BA", "AB", 'A', new ItemStack(block, 1, 1), 'B', new ItemStack(block2, 1, 8)});
+		GameRegistry.addRecipe(new ItemStack(block, 1, 6), new Object[] {" B ", "BAB", " B ", 'A', new ItemStack(block, 1, 1), 'B', new ItemStack(MarsItems.marsItemBasic, 1, 2)});
+		GameRegistry.addRecipe(new ItemStack(block, 4, 1), new Object[] {"AA", "AA", 'A', new ItemStack(block2, 1, 9)});
+		GameRegistry.addRecipe(new ItemStack(block, 4, 7), new Object[] {"AB", "BA", 'A', new ItemStack(block, 1, 1), 'B', new ItemStack(block2, 1, 9)});
+		GameRegistry.addRecipe(new ItemStack(block, 4, 7), new Object[] {"BA", "AB", 'A', new ItemStack(block, 1, 1), 'B', new ItemStack(block2, 1, 9)});
 		GameRegistry.addRecipe(new ItemStack(block, 4, 8), new Object[] {"AA", "AA", 'A', new ItemStack(block, 1, 7)});
 		GameRegistry.addRecipe(new ItemStack(block, 4, 9), new Object[] {"AA", "AA", 'A', new ItemStack(block, 1, 1)});
-		GameRegistry.addRecipe(new ItemStack(block, 2, 10), new Object[] {"A ", " A", 'A', new ItemStack(block2, 1, 8)});
-		GameRegistry.addRecipe(new ItemStack(block, 2, 11), new Object[] {" A", "A ", 'A', new ItemStack(block2, 1, 8)});
+		GameRegistry.addRecipe(new ItemStack(block, 2, 10), new Object[] {"A ", " A", 'A', new ItemStack(block2, 1, 9)});
+		GameRegistry.addRecipe(new ItemStack(block, 2, 11), new Object[] {" A", "A ", 'A', new ItemStack(block2, 1, 9)});
 		GameRegistry.addRecipe(new ItemStack(block, 4, 12), new Object[] {"AB", "BA", 'A', new ItemStack(block, 1, 0), 'B', new ItemStack(block, 1, 2)});
 		GameRegistry.addRecipe(new ItemStack(block, 4, 12), new Object[] {"BA", "AB", 'A', new ItemStack(block, 1, 0), 'B', new ItemStack(block, 1, 5)});
 		GameRegistry.addRecipe(new ItemStack(block, 2, 14), new Object[] {"A ", " A", 'A', new ItemStack(block, 1, 5)});
@@ -85,6 +86,6 @@ public class Patterns {
 		GameRegistry.addShapelessRecipe(new ItemStack(block, 1, 3), new Object[] {new ItemStack(block, 1, 1), ModItems.hammer});
 		GameRegistry.addShapelessRecipe(new ItemStack(block, 1, 13), new Object[] {new ItemStack(block, 1, 5), ModItems.polish});
 		GameRegistry.addShapelessRecipe(new ItemStack(block, 1, 4), new Object[] {new ItemStack(block, 1, 13), ModItems.polish});
-		GameRegistry.addSmelting(new ItemStack(block2, 1, 8), new ItemStack(block, 1, 5), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(block2, 1, 9), new ItemStack(block, 1, 5), 0.1F);
 	}
 }

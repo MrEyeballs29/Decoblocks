@@ -13,6 +13,8 @@ public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
     	ModItems.init();
     	ModBlocks.init();
+    	ModBlocks.RegisterOre();
+    	ModItems.ItemRegisterOre();
     }
 
     public void init(FMLInitializationEvent event) {

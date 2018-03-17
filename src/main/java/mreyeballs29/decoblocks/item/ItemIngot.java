@@ -23,7 +23,7 @@ public class ItemIngot extends Item {
 
 	@Override
 	public String getUnlocalizedName(ItemStack item) {
-		return "item." + Names.METALS[item.getItemDamage() < Names.METALS.length ? item.getItemDamage() : 0] + "_" + Names.INGOT;
+		return "item." + Names.INGOT + Names.TitleCase(Names.METALS[item.getItemDamage() < Names.METALS.length ? item.getItemDamage() : 0]);
 	}
 	
 	@Override

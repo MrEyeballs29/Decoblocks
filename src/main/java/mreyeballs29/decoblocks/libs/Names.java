@@ -165,43 +165,43 @@ public class Names {
 	
 	// Item Array
 	public static final String[] METALS = new String[] {
-			"lead",
-			"nickel",
-			"steel",
-			"bronze",
 			"copper",
 			"tin",
 			"silver",
-			"aluminium",
+			"lead",
+			"nickel",
+			"platinum",
+			"aluminum",
 			"cobalt",
-			"tungsten",
+			"mithril",
 			"zinc",
-			"brass",
+			"chromium",
 			"invar",
+			"steel",
+			"bronze",
 			"electrum",
-			"constantan",
-			"chromium"
+			"brass"
 	};
-	
 	public static final String[] METALS2 = new String[] {
 			"iron",
-			"lead",
-			"nickel",
-			"steel",
-			"bronze",
 			"copper",
 			"tin",
 			"silver",
-			"aluminium",
+			"lead",
+			"nickel",
+			"platinum",
+			"aluminum",
 			"cobalt",
-			"tungsten",
+			"mithril",
 			"zinc",
-			"brass",
+			"chromium",
 			"invar",
+			"steel",
+			"bronze",
 			"electrum",
-			"constantan",
-			"chromium"
+			"brass"
 	};
+
 	
 	// String Method
 	public static String TitleCase(String name) {

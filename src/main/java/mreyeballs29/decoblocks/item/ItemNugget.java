@@ -23,7 +23,7 @@ public class ItemNugget extends Item {
 
 	@Override
 	public String getUnlocalizedName(ItemStack item) {
-		return "item." + Names.METALS2[item.getItemDamage() < Names.METALS2.length ? item.getItemDamage() : 0] + "_" + Names.NUGGET;
+		return "item." + Names.NUGGET + Names.TitleCase(Names.METALS2[item.getItemDamage() < Names.METALS2.length ? item.getItemDamage() : 0]);
 	}
 	
 	@Override

@@ -5,10 +5,12 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import micdoodle8.mods.galacticraft.planets.mars.blocks.MarsBlocks;
 import mreyeballs29.decoblocks.block.ModBlocks;
 import mreyeballs29.decoblocks.item.ModItems;
+import mreyeballs29.decoblocks.libs.Names;
 import mreyeballs29.decoblocks.libs.Patterns;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public final class ShapedCrafting {
 	public static final void init() {
@@ -25,6 +27,14 @@ public final class ShapedCrafting {
 		for (int i = 0; i < 16; ++i) {
 			GameRegistry.addRecipe(new ItemStack(ModBlocks.colorporcelain, 8, i), new Object[] {"AAA", "ABA", "AAA", 'A', ModBlocks.porcelainblock, 'B', new ItemStack(Items.dye, 1, (~i & 15))});
 		}
+		for (int i = 0; i < 16; i++) {
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.nugget, 9, (i + 1)), new Object[] {"Z", 'Z', (Names.INGOT + Names.TitleCase(Names.METALS[i]))}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.ingot, 1, i), new Object[] {"ZZZ", "ZZZ", "ZZZ", 'Z', (Names.NUGGET + Names.TitleCase(Names.METALS[i]))}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.storagemetalblock, 1, i), new Object[] {"ZZZ", "ZZZ", "ZZZ", 'Z', (Names.INGOT + Names.TitleCase(Names.METALS[i]))}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.ingot, 9, 1), new Object[] {"Z", 'Z', ("block" + Names.TitleCase(Names.METALS[i]))}));
+		}
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.nugget, 9, 0), new Object[] {"Z", 'Z', "ingotIron"}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.iron_ingot), new Object[] {"ZZZ", "ZZZ", "ZZZ", 'Z', "nuggetIron"}));
 		Patterns.RockPatternShaper(ModBlocks.porcelainblock);
 		Patterns.StonePatternShaper(ModBlocks.specialstone, Blocks.stonebrick, Blocks.stone);
 		Patterns.PatternShaper(ModBlocks.labblock);
