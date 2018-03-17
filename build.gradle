@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.2.0-R3"
+version = "1.2.1"
 group= "mreyeballs29.decoblocks" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "decoblocks-1.7.10"
 

@@ -1,3 +1,13 @@
+Version 1.2.1
+- Added GC Support
+- Made Names More Simple
+- Fixed Some Removed Blocks
+- Adjusted Some Reipces
+- Added Mars Stone if GC Mars is Installed
+- Added 16 Metals containing nuggets, ingots, and blocks.
+- Added Oredictionary Support
+- Added 4 New Moon Ores if GC Core is Installed
+
 Version 1.2.0 R3
 - Fixed Smelting Recipe for Unique Type Block
 

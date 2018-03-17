@@ -2,8 +2,8 @@
 {
   "modid": "decoblock",
   "name": "DecoBlocks Classic",
-  "description": "Blocks that you can imagine and Colorful Varations",
-  "version": "1.2.0-R3",
+  "description": "Blocks that you can imagine and Colorful Variations",
+  "version": "1.2.1",
   "mcversion": "${mcversion}",
   "url": "https://minecraft.curseforge.com/projects/mreyeballs29-decoblocks-mod",
   "updateUrl": "",
