@@ -201,7 +201,6 @@ public class Names {
 			"electrum",
 			"brass"
 	};
-
 	
 	// String Method
 	public static String TitleCase(String name) {
