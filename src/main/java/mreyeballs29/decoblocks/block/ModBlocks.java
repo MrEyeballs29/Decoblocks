@@ -9,6 +9,7 @@ import mreyeballs29.decoblocks.item.MetaDataMetalStorage;
 import mreyeballs29.decoblocks.item.MetaDataMoonOre;
 import mreyeballs29.decoblocks.item.MetaDataRockBlock;
 import mreyeballs29.decoblocks.item.MetaDataStoneBlock;
+import mreyeballs29.decoblocks.libs.DCMaterial;
 import mreyeballs29.decoblocks.libs.Names;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -28,14 +29,14 @@ public class ModBlocks {
 	
 	public static final CreativeTabs TabIntergration = new CreativeTabs("decointergrationtab") {
 		public Item getTabIconItem() {
-		return Item.getItemFromBlock(labblock);
+		return new ItemStack(labblock, 1, 1).getItem();
 		}
 	};
 	
 	public static Block porcelainpowder = new PorcelainPowder(Material.sand, Names.PORCLEAIN_DUST);
 	public static Block colorporcelain = new ColorPorcelain(Material.rock, Names.COLOR_PORCLEAIN);
 	public static Block porcelainblock = new BlockStoneMeta(Material.rock, Names.PORCLEAIN_BLOCK, "pickaxe", 0);
-	public static Block cream = new BlockBasic(Material.craftedSnow, Names.CREAM, "shovel", 1);
+	public static Block cream = new BlockBasic(DCMaterial.cream, Names.CREAM, "shovel", 0);
 	public static Block specialstone = new BlockStoneSpecial(Material.rock, Names.STONE);
 	public static Block labblock = new BlockMetalMeta(Material.iron, Names.LAB, "pickaxe", 1);
 	public static Block lablamp = new BlockBasic(Material.glass, Names.LAB_LAMP, "pickaxe", 1);

@@ -11,6 +11,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockStorageMetal extends Block {
@@ -28,6 +29,11 @@ public class BlockStorageMetal extends Block {
 	public static final float[] HARDNESSVALUE = new float[] {4.0F, 4.0F, 6.0F, 5.5F, 6.0F, 3.5F, 4.5F, 6.0F, 7.5F, 4.5F, 6.0F, 6.0F, 6.5F, 5.0F, 3.0F, 5.0F};
 	public IIcon[] icons = new IIcon[Names.METALS.length];
 
+	@Override
+	public boolean isBeaconBase(IBlockAccess worldObj, int x, int y, int z, int beaconX, int beaconY, int beaconZ) {
+		return true;
+	}
+	
 	@Override
     public float getBlockHardness(World world, int par2, int par3, int par4)
     {

@@ -22,6 +22,11 @@ public class ItemIngot extends Item {
 	}
 
 	@Override
+	public boolean isBeaconPayment(ItemStack stack) {
+		return true;
+	}
+	
+	@Override
 	public String getUnlocalizedName(ItemStack item) {
 		return "item." + Names.INGOT + Names.TitleCase(Names.METALS[item.getItemDamage() < Names.METALS.length ? item.getItemDamage() : 0]);
 	}
