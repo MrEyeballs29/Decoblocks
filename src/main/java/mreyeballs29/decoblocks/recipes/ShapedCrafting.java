@@ -31,7 +31,7 @@ public final class ShapedCrafting {
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.nugget, 9, (i + 1)), new Object[] {"Z", 'Z', (Names.INGOT + Names.TitleCase(Names.METALS[i]))}));
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.ingot, 1, i), new Object[] {"ZZZ", "ZZZ", "ZZZ", 'Z', (Names.NUGGET + Names.TitleCase(Names.METALS[i]))}));
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.storagemetalblock, 1, i), new Object[] {"ZZZ", "ZZZ", "ZZZ", 'Z', (Names.INGOT + Names.TitleCase(Names.METALS[i]))}));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.ingot, 9, 1), new Object[] {"Z", 'Z', ("block" + Names.TitleCase(Names.METALS[i]))}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.ingot, 9, i), new Object[] {"Z", 'Z', ("block" + Names.TitleCase(Names.METALS[i]))}));
 		}
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.nugget, 9, 0), new Object[] {"Z", 'Z', "ingotIron"}));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.iron_ingot), new Object[] {"ZZZ", "ZZZ", "ZZZ", 'Z', "nuggetIron"}));
