@@ -35,6 +35,16 @@ public final class ShapedCrafting {
 		}
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.nugget, 9, 0), new Object[] {"Z", 'Z', "ingotIron"}));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.iron_ingot), new Object[] {"ZZZ", "ZZZ", "ZZZ", 'Z', "nuggetIron"}));
+		for (int i = 0; i < 16; i++) {
+			if (i == 1 || i == 9) {
+				continue;
+			}
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.metalpickaxe[i]), new Object[] {"ZZZ", " Y ", " Y ", 'Z', Names.MetalUnlocalizedName(Names.METALS[i], 0), 'Y', "stickWood"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.metalaxe[i]), new Object[] {"ZZ", "ZY", " Y", 'Z', Names.MetalUnlocalizedName(Names.METALS[i], 0), 'Y', "stickWood"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.metalshovel[i]), new Object[] {"Z", "Y", "Y", 'Z', Names.MetalUnlocalizedName(Names.METALS[i], 0), 'Y', "stickWood"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.metalhoe[i]), new Object[] {"ZZ", " Y", " Y", 'Z', Names.MetalUnlocalizedName(Names.METALS[i], 0), 'Y', "stickWood"}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.metalsword[i]), new Object[] {"Z", "Z", "Y", 'Z', Names.MetalUnlocalizedName(Names.METALS[i], 0), 'Y', "stickWood"}));
+		}
 		Patterns.RockPatternShaper(ModBlocks.porcelainblock);
 		Patterns.StonePatternShaper(ModBlocks.specialstone, Blocks.stonebrick, Blocks.stone);
 		Patterns.PatternShaper(ModBlocks.labblock);

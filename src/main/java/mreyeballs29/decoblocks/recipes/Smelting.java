@@ -8,8 +8,9 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 public final class Smelting {
-	public static final ItemStack[] Metal = {new ItemStack(Items.iron_ingot), new ItemStack(Items.gold_ingot), new ItemStack(ModItems.ingot, 1, 3), new ItemStack(ModItems.ingot, 1, 4)};
-	
+	public static final ItemStack[] Metal = { new ItemStack(Items.iron_ingot), new ItemStack(Items.gold_ingot),
+			new ItemStack(ModItems.ingot, 1, 3), new ItemStack(ModItems.ingot, 1, 4) };
+
 	public static final void init() {
 		GameRegistry.addSmelting(ModBlocks.porcelainpowder, new ItemStack(ModBlocks.porcelainblock, 1, 0), 0.1F);
 		if (Loader.isModLoaded("GalacticraftCore")) {
