@@ -1,3 +1,8 @@
+Version 1.3.0 Final
+- A final version before 1.10+
+- Added 14 Sets of Tools
+- Fixed Metal Recipes
+
 Version 1.2.1
 - Added GC Support
 - Made Names More Simple
