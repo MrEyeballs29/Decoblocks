@@ -94,6 +94,50 @@ public class Names {
 			"platinum", "aluminum", "cobalt", "mithril", "zinc", "chromium", "invar", "steel", "bronze", "electrum",
 			"brass" };
 
+	public static final String[] GEMS = {
+			"ruby",
+			"sapphire",
+			"topaz",
+			"amethyst",
+			"greenSapphire",
+			"peridot",
+			"blueTopaz",
+			"yellowSapphire"
+	};
+	
+	public static final String[] GEMS2 = {
+			"emerald",
+			"ruby",
+			"sapphire",
+			"topaz",
+			"amethyst",
+			"greenSapphire",
+			"peridot",
+			"blueTopaz",
+			"yellowSapphire"
+	};
+	
+	public static final String[] REGGEMS = {
+			"emerald",
+			"ruby",
+			"sapphire",
+			"topaz",
+			"amethyst",
+			"green_sapphire",
+			"peridot",
+			"blue_topaz",
+			"yellow_sapphire"
+	};
+	public static final String[] REGGEMS2 = {
+			"ruby",
+			"sapphire",
+			"topaz",
+			"amethyst",
+			"green_sapphire",
+			"peridot",
+			"blue_topaz",
+			"yellow_sapphire"
+	};
 	// String Method
 	public static String TitleCase(String name) {
 		return name.substring(0, 1).toUpperCase() + name.substring(1);
@@ -109,5 +153,9 @@ public class Names {
 		String[] type = { "ingot", "dust", "nugget", "rod", "block", "gear", "ring", "pickaxe", "hachet", "shovel", "hoe", "sword",
 				"helmet", "chestplate", "leggings", "boots" };
 		return type[i] + TitleCase(name);
+	}
+	
+	public static String GemUnlocalizedName(String name) {
+		return "gem" + TitleCase(name);
 	}
 }

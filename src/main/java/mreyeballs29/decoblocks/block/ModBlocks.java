@@ -4,6 +4,7 @@ import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import mreyeballs29.decoblocks.item.MetaDataBlock;
 import mreyeballs29.decoblocks.item.MetaDataColors;
+import mreyeballs29.decoblocks.item.MetaDataGemStorage;
 import mreyeballs29.decoblocks.item.MetaDataMars;
 import mreyeballs29.decoblocks.item.MetaDataMetalStorage;
 import mreyeballs29.decoblocks.item.MetaDataMoonOre;
@@ -41,6 +42,7 @@ public class ModBlocks {
 	public static Block labblock = new BlockMetalMeta(Material.iron, Names.LAB, "pickaxe", 1);
 	public static Block lablamp = new BlockBasic(Material.glass, Names.LAB_LAMP, "pickaxe", 1);
 	public static Block storagemetalblock = new BlockStorageMetal(Material.iron, "block");
+	public static Block storagegemblock = new BlockStorageGem(Material.iron, "block");
 	public static Block marsstone = new BlockMarsSpecial(Material.rock, Names.MARS, "pickaxe", 1);
 	public static Block moonore = new BlockMoonOre(Material.rock, Names.MOON_ORE, "pickaxe", 2);
 
@@ -54,6 +56,7 @@ public class ModBlocks {
 		GameRegistry.registerBlock(labblock.setHardness(2.0F).setResistance(9.0F).setStepSound(Block.soundTypeMetal).setLightLevel(0.6F).setCreativeTab(TabDecoClassic), MetaDataBlock.class, Names.LAB);
 		GameRegistry.registerBlock(lablamp.setHardness(2.0F).setResistance(9.0F).setStepSound(Block.soundTypeGlass).setLightLevel(1.0F).setCreativeTab(TabDecoClassic), Names.LAB_LAMP);
 		GameRegistry.registerBlock(storagemetalblock.setResistance(9.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(TabDecoClassic), MetaDataMetalStorage.class, "metal_block");
+		GameRegistry.registerBlock(storagegemblock.setResistance(9.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(TabDecoClassic), MetaDataGemStorage.class, "gem_block");
 		if (Loader.isModLoaded("GalacticraftMars")) {
 			GameRegistry.registerBlock(marsstone.setHardness(2.2F).setResistance(10.0F).setCreativeTab(TabIntergration), MetaDataMars.class, Names.MARS);
 		}
@@ -71,6 +74,9 @@ public class ModBlocks {
 		}
 		for (int i = 0; i < 16; i++) {
 			OreDictionary.registerOre("block" + Names.TitleCase(Names.METALS[i]), new ItemStack(storagemetalblock, 1, i));
+		}
+		for (int i = 0; i < 8; i++) {
+			OreDictionary.registerOre("block" + Names.TitleCase(Names.GEMS2[i]), new ItemStack(storagegemblock, 1, i));
 		}
 	}
 }
