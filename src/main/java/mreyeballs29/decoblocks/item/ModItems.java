@@ -11,15 +11,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public final class ModItems {
-	public static Item clayball;
-	public static Item sand;
-	public static Item labplating;
-	public static Item forcelabplating;
-	public static Item nutrientbar;
-	public static Item hammer;
-	public static Item polish;
-	public static Item ingot = new ItemIngot(Names.INGOT).setCreativeTab(ModBlocks.TabDecoClassic);
-	public static Item nugget;
+	public static Item labplating = new BasicItem("lab_plating", "itemLabPlate");
+	public static Item forcelabplating = new BasicItem("force_lab_plating", "itemForceLabPlate");
+	public static Item nutrientbar = new NutrientBar(7, 0.25F, false, "nutrient_bar", "foodNutrientBar");
+	public static Item hammer = new ItemTool("hammer", true);
+	public static Item polish = new ItemTool("polish", false).setContainerItem(Items.bowl);
+	public static Item ingot = new ItemIngot("ingot").setCreativeTab(ModBlocks.TabDecoClassic);
+	public static Item nugget = new ItemNugget("nugget").setCreativeTab(ModBlocks.TabDecoClassic);
+	public static Item chain = new BasicItem("chain", "itemChain");
 
 	public static ItemToolPickaxe[] metalpickaxe = new ItemToolPickaxe[16];
 	public static ItemToolAxe[] metalaxe = new ItemToolAxe[16];
@@ -27,7 +26,7 @@ public final class ModItems {
 	public static ItemToolHoe[] metalhoe = new ItemToolHoe[16];
 	public static ItemToolSword[] metalsword = new ItemToolSword[16];
 
-	public static final ToolMaterial[] toolMaterial = new Item.ToolMaterial[16];
+	public static final ToolMaterial[] toolmetalMaterial = new Item.ToolMaterial[16];
 
 	public static final void init() {
 		ItemMaterial.addSets();
@@ -35,38 +34,27 @@ public final class ModItems {
 			if (i == 1 || i == 9) {
 				continue;
 			}
-			toolMaterial[i] = ItemMaterial.setToolMaterial(ItemMaterial.toolmaterialsets[i])
+			toolmetalMaterial[i] = ItemMaterial.setToolMaterial(ItemMaterial.toolmaterialsets[i])
 					.setRepairItem(new ItemStack(ingot, 1, i));
-			metalpickaxe[i] = new ItemToolPickaxe(toolMaterial[i], Names.MetalRegname(Names.METALS[i], 7),
+			metalpickaxe[i] = new ItemToolPickaxe(toolmetalMaterial[i], Names.MetalRegname(Names.METALS[i], 7),
 					Names.MetalUnlocalizedName(Names.METALS[i], 7));
-			metalaxe[i] = new ItemToolAxe(toolMaterial[i], Names.MetalRegname(Names.METALS[i], 8),
+			metalaxe[i] = new ItemToolAxe(toolmetalMaterial[i], Names.MetalRegname(Names.METALS[i], 8),
 					Names.MetalUnlocalizedName(Names.METALS[i], 8));
-			metalshovel[i] = new ItemToolSpade(toolMaterial[i], Names.MetalRegname(Names.METALS[i], 9),
+			metalshovel[i] = new ItemToolSpade(toolmetalMaterial[i], Names.MetalRegname(Names.METALS[i], 9),
 					Names.MetalUnlocalizedName(Names.METALS[i], 9));
-			metalhoe[i] = new ItemToolHoe(toolMaterial[i], Names.MetalRegname(Names.METALS[i], 10),
+			metalhoe[i] = new ItemToolHoe(toolmetalMaterial[i], Names.MetalRegname(Names.METALS[i], 10),
 					Names.MetalUnlocalizedName(Names.METALS[i], 10));
-			metalsword[i] = new ItemToolSword(toolMaterial[i], Names.MetalRegname(Names.METALS[i], 11),
+			metalsword[i] = new ItemToolSword(toolmetalMaterial[i], Names.MetalRegname(Names.METALS[i], 11),
 					Names.MetalUnlocalizedName(Names.METALS[i], 11));
 		}
-		GameRegistry.registerItem(clayball = new BasicItem(Names.CLAY_ROUND).setCreativeTab(ModBlocks.TabDecoClassic),
-				Names.CLAY_ROUND);
-		GameRegistry.registerItem(sand = new BasicItem(Names.SAND_DUST).setCreativeTab(ModBlocks.TabDecoClassic),
-				Names.SAND_DUST);
-		GameRegistry.registerItem(
-				labplating = new BasicItem(Names.LAB_PLATING).setCreativeTab(ModBlocks.TabDecoClassic),
-				Names.LAB_PLATING);
-		GameRegistry.registerItem(
-				forcelabplating = new BasicItem(Names.FORCE_LAB_PLATING).setCreativeTab(ModBlocks.TabDecoClassic),
-				Names.FORCE_LAB_PLATING);
-		GameRegistry.registerItem(ingot, Names.INGOT);
-		GameRegistry.registerItem(nugget = new ItemNugget(Names.NUGGET).setCreativeTab(ModBlocks.TabDecoClassic),
-				Names.NUGGET);
-		GameRegistry.registerItem(hammer = new ItemResuseAble(Names.HAMMER).setCreativeTab(ModBlocks.TabDecoClassic)
-				.setFull3D().setMaxStackSize(1), Names.HAMMER);
-		GameRegistry.registerItem(polish = new ItemResuseAble(Names.POLISH).setCreativeTab(ModBlocks.TabDecoClassic)
-				.setContainerItem(Items.bowl).setMaxStackSize(1), Names.POLISH);
-		GameRegistry.registerItem(nutrientbar = new NutrientBar(7, 0.25F, false, Names.NUTRIENT_BAR),
-				Names.NUTRIENT_BAR);
+		GameRegistry.registerItem(labplating, "lab_plating");
+		GameRegistry.registerItem(forcelabplating, "force_lab_plating");
+		GameRegistry.registerItem(ingot, "ingot");
+		GameRegistry.registerItem(nugget, "nugget");
+		GameRegistry.registerItem(chain, "chain");
+		GameRegistry.registerItem(hammer, Names.HAMMER);
+		GameRegistry.registerItem(polish, Names.POLISH);
+		GameRegistry.registerItem(nutrientbar, Names.NUTRIENT_BAR);
 		for (int i = 0; i < 16; i++) {
 			if (i == 1 || i == 9) {
 				continue;

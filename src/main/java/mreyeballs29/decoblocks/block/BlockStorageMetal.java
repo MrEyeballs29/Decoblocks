@@ -25,8 +25,8 @@ public class BlockStorageMetal extends Block {
 		}
 	}
 
-	public static final int[] LEVELS = new int[] {1, 1, 2, 2, 2, 2, 1, 2, 3, 1, 2, 2, 2, 2, 2, 2};
-	public static final float[] HARDNESSVALUE = new float[] {4.0F, 4.0F, 6.0F, 5.5F, 6.0F, 3.5F, 4.5F, 6.0F, 7.5F, 4.5F, 6.0F, 6.0F, 6.5F, 5.0F, 3.0F, 5.0F};
+	private static int[] LEVELS = new int[] {1, 1, 2, 2, 2, 2, 1, 2, 3, 1, 2, 2, 2, 2, 2, 2};
+	private static float[] HARDNESSVALUE = new float[] {4.0F, 4.0F, 6.0F, 5.5F, 6.0F, 3.5F, 4.5F, 6.0F, 7.5F, 4.5F, 6.0F, 6.0F, 6.5F, 5.0F, 3.0F, 5.0F};
 	public IIcon[] icons = new IIcon[Names.METALS.length];
 
 	@Override

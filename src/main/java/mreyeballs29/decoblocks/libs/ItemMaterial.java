@@ -205,15 +205,16 @@ public class ItemMaterial {
 		return new ItemMaterial(armorMaterial.name().toLowerCase(), armorMaterial.getDurability(type), defense, armorMaterial.getEnchantability());
 	}
 	
-	public static ItemMaterial[] toolmaterialsets = new ItemMaterial[16];
+	public static ItemMaterial[] toolmaterialsets = new ItemMaterial[25];
+	public static ItemMaterial[] armormaterialsets = new ItemMaterial[26];
 	
 	public static void addSets() {
 		toolmaterialsets[0] = new ItemMaterial("copper", 1, 145, 5.0F, 1.5F, 8);
 		// toolmaterialsets[1] = null;
-		toolmaterialsets[2] = new ItemMaterial("silver", 1, 70, 10.0F, 1.0F, 17);
+		toolmaterialsets[2] = new ItemMaterial("silver", 1, 70, 10.0F, 1.0F, 21);
 		toolmaterialsets[3] = new ItemMaterial("lead", 2, 180, 5.5F, 2.0F, 12);
 		toolmaterialsets[4] = new ItemMaterial("nickel", 2, 200, 6.0F, 2.0F, 9);
-		toolmaterialsets[5] = new ItemMaterial("platinum", 2, 225, 7.0F, 2.5F, 19);
+		toolmaterialsets[5] = new ItemMaterial("platinum", 2, 400, 7.0F, 2.5F, 19);
 		toolmaterialsets[6] = new ItemMaterial("aluminum", 1, 140, 4.5F, 1.0F, 12);
 		toolmaterialsets[7] = new ItemMaterial("cobalt", 2, 250, 6.0F, 2.0F, 13);
 		toolmaterialsets[8] = new ItemMaterial("mithril", 3, 800, 7.5F, 3.0F, 21);
@@ -224,5 +225,41 @@ public class ItemMaterial {
 		toolmaterialsets[13] = new ItemMaterial("bronze", 2, 180, 6.0F, 2.0F, 13);
 		toolmaterialsets[14] = new ItemMaterial("brass", 1, 170, 9.0F, 1.0F, 18);
 		toolmaterialsets[15] = new ItemMaterial("electrum", 1, 90, 11.0F, 0.5F, 20);
+		toolmaterialsets[16] = new ItemMaterial("emerald", 2, (int)ToolMaterial.EMERALD.getMaxUses()/4, 7.0F, 2.0F, 15);
+		toolmaterialsets[17] = new ItemMaterial("ruby", 3, (int)ToolMaterial.EMERALD.getMaxUses()/3, 9.0F, 3.0F, 10);
+		toolmaterialsets[18] = new ItemMaterial("sapphire", 3, 943, 8.0F, 3.0F, 7);
+		toolmaterialsets[19] = new ItemMaterial("topaz", 2, 424, 7.0F, 2.0F, 17);
+		toolmaterialsets[20] = new ItemMaterial("amethyst", 2, 1029, 9.0F, 3.0F, 15);
+		toolmaterialsets[21] = new ItemMaterial("greenSapphire", 3, 943, 8.0F, 3.0F, 14);
+		toolmaterialsets[22] = new ItemMaterial("peridot", 3, 1103, 8.0F, 3.0F, 14);
+		toolmaterialsets[23] = new ItemMaterial("blueTopaz", 2, 424, 7.0F, 2.0F, 17);
+		toolmaterialsets[24] = new ItemMaterial("yellowSapphire", 3, 943, 8.0F, 3.0F, 7);
+		
+		armormaterialsets[0] = new ItemMaterial("cloth", 3, new int[] {1, 2, 1, 0}, 18);
+		armormaterialsets[1] = new ItemMaterial("copper", 6, new int[] {1, 5, 3, 1}, 15);
+		// armormaterialsets[2] = null;
+		armormaterialsets[3] = new ItemMaterial("silver", 4, new int[] {2, 6, 4, 1}, 16);
+		armormaterialsets[4] = new ItemMaterial("lead", 10, new int[] {2, 6, 3, 1}, 7);
+		armormaterialsets[5] = new ItemMaterial("nickel", 12, new int[] {2, 5, 5, 2}, 14);
+		armormaterialsets[6] = new ItemMaterial("platinum", 25, new int[] {2, 7, 6, 2}, 8);
+		armormaterialsets[7] = new ItemMaterial("aluminum", 5, new int[] {1, 2, 2, 1}, 13);
+		armormaterialsets[8] = new ItemMaterial("cobalt", 3, new int[] {1, 2, 1, 0}, 18);
+		armormaterialsets[9] = new ItemMaterial("mithril", 6, new int[] {1, 5, 3, 1}, 15);
+		// armormaterialsets[10] = null;
+		armormaterialsets[11] = new ItemMaterial("chromium", 10, new int[] {2, 6, 3, 1}, 7);
+		armormaterialsets[12] = new ItemMaterial("invar", 12, new int[] {2, 5, 5, 2}, 14);
+		armormaterialsets[13] = new ItemMaterial("steel", 25, new int[] {2, 7, 6, 2}, 8);
+		armormaterialsets[14] = new ItemMaterial("bronze", 5, new int[] {1, 2, 2, 1}, 13);
+		armormaterialsets[15] = new ItemMaterial("brass", 3, new int[] {1, 2, 1, 0}, 18);
+		armormaterialsets[16] = new ItemMaterial("electrum", 6, new int[] {1, 5, 3, 1}, 15);
+		armormaterialsets[17] = new ItemMaterial("emerald", 4, new int[] {2, 6, 4, 1}, 16);
+		armormaterialsets[18] = new ItemMaterial("ruby", 10, new int[] {2, 6, 3, 1}, 7);
+		armormaterialsets[19] = new ItemMaterial("sapphire", 12, new int[] {2, 5, 5, 2}, 14);
+		armormaterialsets[20] = new ItemMaterial("topaz", 25, new int[] {2, 7, 6, 2}, 8);
+		armormaterialsets[21] = new ItemMaterial("amethyst", 5, new int[] {1, 2, 2, 1}, 13);
+		armormaterialsets[22] = new ItemMaterial("greenSapphire", 5, new int[] {1, 2, 2, 1}, 13);
+		armormaterialsets[23] = new ItemMaterial("peridot", 25, new int[] {2, 7, 6, 2}, 8);
+		armormaterialsets[24] = new ItemMaterial("blueTopaz", 5, new int[] {1, 2, 2, 1}, 13);
+		armormaterialsets[25] = new ItemMaterial("yellowSapphire", 5, new int[] {1, 2, 2, 1}, 13);
 	}
 }

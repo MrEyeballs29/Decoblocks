@@ -6,9 +6,9 @@ import net.minecraft.item.ItemFood;
 
 public class NutrientBar extends ItemFood {
 
-	public NutrientBar(int i, float f, boolean b, String name) {
+	public NutrientBar(int i, float f, boolean b, String name, String name2) {
 		super(i, f, b);
-		this.setUnlocalizedName(name);
+		this.setUnlocalizedName(name2);
 		this.setTextureName(Constants.TEXTURE_PREFIX + name);
 		this.setCreativeTab(ModBlocks.TabDecoClassic);
 	}

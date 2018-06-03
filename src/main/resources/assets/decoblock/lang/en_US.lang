@@ -3,13 +3,12 @@ itemGroup.decoblockstab=DecoBlocks Classic
 itemGroup.decointergrationtab=Deco Intergration
 
 #Items
-item.clay_round.name=Clay Ball
-item.sand_dust.name=Sand
-item.nutrient_bar.name=Nutrient Bar
-item.laboratory_plate.name=Laboratory Plate
-item.reinforced_laboratory_plate.name=Reinforced Laboratory Plate
-item.hammer.name=Crushing Hammer
-item.polisher.name=Polisher
+item.foodNutrientBar.name=Nutrient Bar
+item.itemLabPlate.name=Laboratory Plate
+item.itemForceLabPlate.name=Reinforced Laboratory Plate
+item.itemChain.name=Chain
+item.toolHammer.name=Crushing Hammer
+item.toolPolish.name=Polisher
 item.ingotLead.name=Lead Ingot
 item.ingotNickel.name=Nickel Ingot
 item.ingotSteel.name=Steel Ingot

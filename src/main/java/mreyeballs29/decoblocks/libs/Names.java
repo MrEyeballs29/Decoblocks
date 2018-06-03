@@ -96,7 +96,7 @@ public class Names {
 
 	// String Method
 	public static String TitleCase(String name) {
-		return name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
+		return name.substring(0, 1).toUpperCase() + name.substring(1);
 	}
 
 	public static String MetalRegname(String name, int i) {
