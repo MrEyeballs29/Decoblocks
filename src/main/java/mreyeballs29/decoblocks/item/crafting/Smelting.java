@@ -1,4 +1,4 @@
-package mreyeballs29.decoblocks.recipes;
+package mreyeballs29.decoblocks.item.crafting;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
