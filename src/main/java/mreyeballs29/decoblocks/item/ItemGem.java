@@ -3,7 +3,6 @@ package mreyeballs29.decoblocks.item;
 import java.util.List;
 
 import mreyeballs29.decoblocks.Constants;
-import mreyeballs29.decoblocks.block.ModBlocks;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -40,7 +39,7 @@ public class ItemGem extends Item {
 		this.setMaxDamage(0);
 		this.setUnlocalizedName(name);
 		this.setTextureName(Constants.TEXTURE_PREFIX + name);
-		this.setCreativeTab(ModBlocks.TabDecoClassic);
+		this.setCreativeTab(Constants.TabDecoClassic);
 	}
 	
 	@Override

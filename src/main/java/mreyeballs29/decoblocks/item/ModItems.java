@@ -1,7 +1,7 @@
 package mreyeballs29.decoblocks.item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import mreyeballs29.decoblocks.block.ModBlocks;
+import mreyeballs29.decoblocks.Constants;
 import mreyeballs29.decoblocks.libs.ItemMaterial;
 import mreyeballs29.decoblocks.libs.Names;
 import net.minecraft.init.Items;
@@ -11,15 +11,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public final class ModItems {
-	public static Item labplating = new BasicItem("lab_plating", "itemLabPlate");
-	public static Item forcelabplating = new BasicItem("force_lab_plating", "itemForceLabPlate");
-	public static Item nutrientbar = new NutrientBar(7, 0.25F, false, "nutrient_bar", "foodNutrientBar");
-	public static Item hammer = new ItemTool("hammer", true);
-	public static Item polish = new ItemTool("polish", false).setContainerItem(Items.bowl);
-	public static Item ingot = new ItemIngot("ingot").setCreativeTab(ModBlocks.TabDecoClassic);
-	public static Item nugget = new ItemNugget("nugget").setCreativeTab(ModBlocks.TabDecoClassic);
-	public static Item chain = new BasicItem("chain", "itemChain");
-	public static Item gem = new ItemGem("gem");
+	public static Item labplating;
+	public static Item forcelabplating;
+	public static Item nutrientbar;
+	public static Item hammer;
+	public static Item polish;
+	public static Item ingot;
+	public static Item nugget;
+	public static Item chain;
+	public static Item gem;
 
 	public static ItemToolPickaxe[] metalpickaxe = new ItemToolPickaxe[16];
 	public static ItemToolAxe[] metalaxe = new ItemToolAxe[16];
@@ -36,7 +36,22 @@ public final class ModItems {
 	public static final ToolMaterial[] toolmetalMaterial = new Item.ToolMaterial[16];
 	public static final ToolMaterial[] toolgemMaterial = new Item.ToolMaterial[9];
 
-	public static final void init() {
+	public static final void Finalize() {
+		InitializeItems();
+		RegisterItems();
+		RegisterItemOre();
+	}
+	
+	private static void InitializeItems() {
+		labplating = new BasicItem("lab_plating", "itemLabPlate");                        
+		forcelabplating = new BasicItem("force_lab_plating", "itemForceLabPlate");        
+		nutrientbar = new ItemDCFood(7, 0.25F, "nutrient_bar", "foodNutrientBar");
+		hammer = new ItemTool("hammer", true);                                            
+		polish = new ItemTool("polish", false).setContainerItem(Items.bowl);              
+		ingot = new ItemIngot("ingot").setCreativeTab(Constants.TabDecoClassic);          
+		nugget = new ItemNugget("nugget").setCreativeTab(Constants.TabDecoClassic);       
+		chain = new BasicItem("chain", "itemChain");                                      
+		gem = new ItemGem("gem");                                                         
 		ItemMaterial.addSets();
 		for (int i = 0; i < 16; i++) {
 			if (i == 1 || i == 9) {
@@ -73,6 +88,9 @@ public final class ModItems {
 			gemsword[i] = new ItemToolSword(toolgemMaterial[i], Names.MetalRegname(Names.REGGEMS[i], 11),
 					Names.MetalUnlocalizedName(Names.GEMS2[i], 11));
 		}
+	}
+	
+	public static void RegisterItems() {
 		GameRegistry.registerItem(labplating, "lab_plating");
 		GameRegistry.registerItem(forcelabplating, "force_lab_plating");
 		GameRegistry.registerItem(ingot, "ingot");
@@ -86,27 +104,27 @@ public final class ModItems {
 			if (i == 1 || i == 9) {
 				continue;
 			}
-			GameRegistry.registerItem(metalpickaxe[i].setCreativeTab(ModBlocks.TabDecoClassic),
+			GameRegistry.registerItem(metalpickaxe[i].setCreativeTab(Constants.TabDecoClassic),
 					Names.MetalRegname(Names.METALS[i], 7));
-			GameRegistry.registerItem(metalaxe[i].setCreativeTab(ModBlocks.TabDecoClassic),
+			GameRegistry.registerItem(metalaxe[i].setCreativeTab(Constants.TabDecoClassic),
 					Names.MetalRegname(Names.METALS[i], 8));
-			GameRegistry.registerItem(metalshovel[i].setCreativeTab(ModBlocks.TabDecoClassic),
+			GameRegistry.registerItem(metalshovel[i].setCreativeTab(Constants.TabDecoClassic),
 					Names.MetalRegname(Names.METALS[i], 9));
-			GameRegistry.registerItem(metalhoe[i].setCreativeTab(ModBlocks.TabDecoClassic),
+			GameRegistry.registerItem(metalhoe[i].setCreativeTab(Constants.TabDecoClassic),
 					Names.MetalRegname(Names.METALS[i], 10));
-			GameRegistry.registerItem(metalsword[i].setCreativeTab(ModBlocks.TabDecoClassic),
+			GameRegistry.registerItem(metalsword[i].setCreativeTab(Constants.TabDecoClassic),
 					Names.MetalRegname(Names.METALS[i], 11));
 		}
 		for (int i = 0; i < 9; i++) {
-			GameRegistry.registerItem(gempickaxe[i].setCreativeTab(ModBlocks.TabDecoClassic), Names.MetalRegname(Names.REGGEMS[i], 7));
-			GameRegistry.registerItem(gemaxe[i].setCreativeTab(ModBlocks.TabDecoClassic), Names.MetalRegname(Names.REGGEMS[i], 8));
-			GameRegistry.registerItem(gemshovel[i].setCreativeTab(ModBlocks.TabDecoClassic), Names.MetalRegname(Names.REGGEMS[i], 9));
-			GameRegistry.registerItem(gemhoe[i].setCreativeTab(ModBlocks.TabDecoClassic), Names.MetalRegname(Names.REGGEMS[i], 10));
-			GameRegistry.registerItem(gemsword[i].setCreativeTab(ModBlocks.TabDecoClassic), Names.MetalRegname(Names.REGGEMS[i], 11));
+			GameRegistry.registerItem(gempickaxe[i].setCreativeTab(Constants.TabDecoClassic), Names.MetalRegname(Names.REGGEMS[i], 7));
+			GameRegistry.registerItem(gemaxe[i].setCreativeTab(Constants.TabDecoClassic), Names.MetalRegname(Names.REGGEMS[i], 8));
+			GameRegistry.registerItem(gemshovel[i].setCreativeTab(Constants.TabDecoClassic), Names.MetalRegname(Names.REGGEMS[i], 9));
+			GameRegistry.registerItem(gemhoe[i].setCreativeTab(Constants.TabDecoClassic), Names.MetalRegname(Names.REGGEMS[i], 10));
+			GameRegistry.registerItem(gemsword[i].setCreativeTab(Constants.TabDecoClassic), Names.MetalRegname(Names.REGGEMS[i], 11));
 		}
 	}
 
-	public static void ItemRegisterOre() {
+	public static void RegisterItemOre() {
 		for (int i = 0; i < Names.METALS.length; i++) {
 			OreDictionary.registerOre((Names.MetalUnlocalizedName(Names.METALS[i], 0)),
 					new ItemStack(ModItems.ingot, 1, i));
