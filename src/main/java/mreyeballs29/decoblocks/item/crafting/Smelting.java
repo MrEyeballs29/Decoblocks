@@ -18,5 +18,11 @@ public final class Smelting {
 				GameRegistry.addSmelting(new ItemStack(ModBlocks.moonore, 1, i), Metal[i], 0.5F);
 			}
 		}
+		for (int i = 0; i < 8; i++) {
+			GameRegistry.addSmelting(new ItemStack(ModBlocks.gemore, 1, i), new ItemStack(ModItems.gem, 1, i), 0.8F);
+		}
+		for (int i = 0; i < 11; i++) {
+			GameRegistry.addSmelting(new ItemStack(ModBlocks.basicore, 1, i), new ItemStack(ModItems.ingot, 1, i), 0.5F);
+		}
 	}
 }
