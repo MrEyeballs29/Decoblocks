@@ -74,6 +74,8 @@ public class Names {
 			"diagonal_b" // 12
 	};
 	public static final String[] ORES = new String[] { "iron", "gold", "lead", "nickel" };
+	
+	public static final String[] BASIC_ORES = new String[] {"copper", "tin", "silver", "lead", "nickel", "platinum", "aluminum", "cobalt", "mithril", "chromium", "zinc"};
 
 	// Items
 	public static final String CLAY_ROUND = "clay_round";
