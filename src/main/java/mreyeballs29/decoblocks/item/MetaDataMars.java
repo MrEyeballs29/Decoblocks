@@ -10,7 +10,6 @@ public class MetaDataMars extends ItemBlockWithMetadata {
 		super(block, block);
 		this.hasSubtypes = true;
 		this.setMaxDamage(0);
-		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
