@@ -3,6 +3,7 @@ package mreyeballs29.decoblocks.block;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import mreyeballs29.decoblocks.Constants;
+import mreyeballs29.decoblocks.item.MetaDataBasicOre;
 import mreyeballs29.decoblocks.item.MetaDataBlock;
 import mreyeballs29.decoblocks.item.MetaDataColors;
 import mreyeballs29.decoblocks.item.MetaDataGemStorage;
@@ -26,6 +27,8 @@ public class ModBlocks {
 	public static Block specialstone;
 	public static Block labblock;
 	public static Block lablamp;
+	public static Block basicore;
+	public static Block gemore;
 	public static Block storagemetalblock;
 	public static Block storagegemblock;
 	public static Block marsstone;
@@ -46,7 +49,9 @@ public class ModBlocks {
 		cream = new BlockBasic(DCMaterial.cream, Names.CREAM, "shovel", 0);                     
 		specialstone = new BlockStoneSpecial(Material.rock, Names.STONE);                       
 		labblock = new BlockMetalMeta(Material.iron, Names.LAB, "pickaxe", 1);                  
-		lablamp = new BlockBasic(Material.glass, Names.LAB_LAMP, "pickaxe", 1);                 
+		lablamp = new BlockBasic(Material.glass, Names.LAB_LAMP, "pickaxe", 1);
+		basicore = new BlockBasicOre(Material.rock, "ore", new int[] {1, 1, 2, 2, 2, 2, 1, 2, 3, 2, 1});
+		gemore = new BlockGemOre(Material.rock, "ore");
 		storagemetalblock = new BlockStorageMetal(Material.iron, "block");                      
 		storagegemblock = new BlockStorageGem(Material.iron, "block");                          
 		marsstone = new BlockMarsSpecial(Material.rock, Names.MARS, "pickaxe", 1);              
@@ -63,6 +68,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(specialstone.setHardness(1.5F).setResistance(6.0F).setCreativeTab(Constants.TabDecoClassic), MetaDataStoneBlock.class, Names.STONE);
 		GameRegistry.registerBlock(labblock.setHardness(2.0F).setResistance(9.0F).setStepSound(Block.soundTypeMetal).setLightLevel(0.6F).setCreativeTab(Constants.TabDecoClassic), MetaDataBlock.class, Names.LAB);
 		GameRegistry.registerBlock(lablamp.setHardness(2.0F).setResistance(9.0F).setStepSound(Block.soundTypeGlass).setLightLevel(1.0F).setCreativeTab(Constants.TabDecoClassic), Names.LAB_LAMP);
+		GameRegistry.registerBlock(basicore.setCreativeTab(Constants.TabDecoClassic), MetaDataBasicOre.class ,"basic_ore");
+		GameRegistry.registerBlock(gemore.setCreativeTab(Constants.TabDecoClassic), MetaDataGemStorage.class ,"gem_ore");
 		GameRegistry.registerBlock(storagemetalblock.setResistance(9.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(Constants.TabDecoClassic), MetaDataMetalStorage.class, "metal_block");
 		GameRegistry.registerBlock(storagegemblock.setResistance(9.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(Constants.TabDecoClassic), MetaDataGemStorage.class, "gem_block");
 		GameRegistry.registerBlock(alloysmelter.setCreativeTab(Constants.TabDecoClassic), "alloysmelter");
@@ -82,11 +89,15 @@ public class ModBlocks {
 			OreDictionary.registerOre("oreLead", new ItemStack(moonore, 1, 2));
 			OreDictionary.registerOre("oreNickel", new ItemStack(moonore, 1, 3));
 		}
+		for (int i = 0; i < 9; i++) {
+			OreDictionary.registerOre("ore" + Names.TitleCase(Names.BASIC_ORES[i]), new ItemStack(basicore, 1, i));
+		}
 		for (int i = 0; i < 16; i++) {
 			OreDictionary.registerOre("block" + Names.TitleCase(Names.METALS[i]), new ItemStack(storagemetalblock, 1, i));
 		}
 		for (int i = 0; i < 8; i++) {
 			OreDictionary.registerOre("block" + Names.TitleCase(Names.GEMS[i]), new ItemStack(storagegemblock, 1, i));
+			OreDictionary.registerOre("ore" + Names.TitleCase(Names.GEMS[i]), new ItemStack(gemore, 1, i));
 		}
 	}
 }

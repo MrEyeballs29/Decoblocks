@@ -14,9 +14,12 @@ import mreyeballs29.decoblocks.item.crafting.ShapedCrafting;
 import mreyeballs29.decoblocks.item.crafting.ShapelessCrafting;
 import mreyeballs29.decoblocks.item.crafting.Smelting;
 import mreyeballs29.decoblocks.tileentity.TileEntityAlloySmelter;
+import mreyeballs29.decoblocks.utils.ConfigManagerIssacCore;
+import mreyeballs29.decoblocks.world.WorldGenerationOres;
 
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
+    	ConfigManagerIssacCore.Main(event.getSuggestedConfigurationFile());
     	ModItems.Finalize();
     	ModBlocks.Finalize();
     	GameRegistry.registerTileEntity(TileEntityAlloySmelter.class, Constants.modID + ":tileEntityAlloySmelter");

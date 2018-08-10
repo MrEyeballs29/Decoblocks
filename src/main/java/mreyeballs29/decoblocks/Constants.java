@@ -27,4 +27,28 @@ public class Constants {
 		return new ItemStack(ModBlocks.labblock, 1, 3).getItem();
 		}
 	};
+	
+	public static boolean isForest(int par) {
+		return par == 1 || par == 129 || par == 4 || par == 18 || par == 132;
+	}
+	
+	public static boolean isDesert(int par1) {
+		return par1 == 2 || par1 == 130 || par1 == 17;
+	}
+	
+	public static boolean isTaiga(int par) {
+		return par == 5 || par == 32 || par == 135 || par == 160 || par == 161 || par == 19 || par == 33;
+	}
+	
+	public static boolean isJungle(int par) {
+		return (par >= 21 && par <= 23) || par == 149 || par == 151;
+	}
+	
+	public static boolean isMesa(int par) {
+		return (par >= 35 && par <= 39) || (par >= 163 && par <= 167);
+	}
+	
+	public static boolean isFrozen(int par) {
+		return (par >= 10 && par <= 13) || par == 30 || par == 31 || par == 140 || par == 158;
+	}
 }
