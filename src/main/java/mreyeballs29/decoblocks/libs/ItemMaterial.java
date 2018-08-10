@@ -16,7 +16,6 @@ public class ItemMaterial {
 	/**
 	 * To tell whether it is shiny.
 	 */
-	private int uses;
 	private boolean shiny;
 	/**
 	 * The amount of durability that goes onto the material
@@ -35,6 +34,10 @@ public class ItemMaterial {
 	 * The amount of enchantment power can be applied to that tool material
 	 */
 	private int enchantability;
+	/** 
+	 * The amount of uses can do.
+	 */
+	private int uses;
 
 	public ItemMaterial(String name, int level, int uses, float efficiency, float damage, int enchantability) {
 		this.name = name;
