@@ -1,3 +1,11 @@
+Version 1.4.0 Final
+- Added World Gen for Metals and Gems
+- Added 8 Gems
+- Added Recipes for Gems and World Ores
+- Added A Basic Alloy Smelter Which alloys metals
+- Fixed Several Recipes
+- A Real final version before 1.10+
+
 Version 1.3.0 Final
 - A final version before 1.10+
 - Added 14 Sets of Tools
