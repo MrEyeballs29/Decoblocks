@@ -4,7 +4,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mreyeballs29.decoblocks.block.BlockAlloySmelter;
-import mreyeballs29.decoblocks.item.ModItems;
 import mreyeballs29.decoblocks.recipe.AlloyRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -131,7 +130,7 @@ public class TileEntityAlloySmelter extends TileEntity implements ISidedInventor
 		
 		this.furnaceBurnTime = compound.getShort("BurnTime");
 		this.alloyCookTime = compound.getShort("CookTime");
-		this.currentItemBurnTime = getItemBurnTime(this.itemstacks[1]);
+		this.currentItemBurnTime = getItemBurnTime(this.itemstacks[2]);
 		
 		if (compound.hasKey("CustomName", 8)) {
 			this.varit = compound.getString("CustomName");
@@ -168,8 +167,8 @@ public class TileEntityAlloySmelter extends TileEntity implements ISidedInventor
 	
 	@SideOnly(Side.CLIENT)
 	public int getRemainingBurnTime(int par1) {
-		if(this.furnaceBurnTime == 200) {
-			this.furnaceBurnTime = 0;
+		if(this.furnaceBurnTime == 0) {
+			this.furnaceBurnTime = 200;
 		}
 		return this.furnaceBurnTime * par1 / this.currentItemBurnTime;
 	}
@@ -188,36 +187,37 @@ public class TileEntityAlloySmelter extends TileEntity implements ISidedInventor
 		}
 		
 		if (!this.worldObj.isRemote) {
-			if (this.furnaceBurnTime == 0 && this.canAlloy()) {
-				this.currentItemBurnTime = this.furnaceBurnTime = getItemBurnTime(this.itemstacks[2]);
-				
-				if (this.furnaceBurnTime > 0) {
-					flag1 = true;
-					if (this.itemstacks[2] != null) {
-						--this.itemstacks[2].stackSize;
-						
-						if (this.itemstacks[2].stackSize == 0) {
-							this.itemstacks[2] = this.itemstacks[2].getItem().getContainerItem(this.itemstacks[2]);
+			if (this.furnaceBurnTime != 0 || this.itemstacks[1] != null && this.itemstacks[0] != null && this.itemstacks[2] != null) {
+				if (this.furnaceBurnTime == 0 && this.canAlloy()) {
+					this.currentItemBurnTime = (this.furnaceBurnTime = getItemBurnTime(this.itemstacks[2]));
+					
+					if (this.furnaceBurnTime > 0) {
+						flag1 = true;
+						if (this.itemstacks[2] != null) {
+							--this.itemstacks[2].stackSize;
+							
+							if (this.itemstacks[2].stackSize == 0) {
+								this.itemstacks[2] = this.itemstacks[2].getItem().getContainerItem(this.itemstacks[2]);
+							}
 						}
 					}
 				}
-			}
-			
-			if (this.isBurning() && this.canAlloy()) {
-				++this.alloyCookTime;
-				if (this.alloyCookTime == 400) {
+				
+				if (this.isBurning() && this.canAlloy()) {
+					++this.alloyCookTime;
+					if (this.alloyCookTime == 400) {
+						this.alloyCookTime = 0;
+						this.produceAlloy();
+						flag1 = true;
+					}
+				} else {
 					this.alloyCookTime = 0;
-					this.produceAlloy();
-					flag1 = true;
 				}
-			} else {
-				this.alloyCookTime = 0;
 			}
-		}
-		
-		if (flag != this.furnaceBurnTime > 0) {
-			flag1 = true;
-			BlockAlloySmelter.updateBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
+			if (flag != this.furnaceBurnTime > 0) {
+				flag1 = true;
+				BlockAlloySmelter.updateBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
+			}
 		}
 		
 		if (flag1) {
@@ -234,36 +234,11 @@ public class TileEntityAlloySmelter extends TileEntity implements ISidedInventor
 			} else if (this.itemstacks[3].getItem() == itemStack.getItem()) {
 				this.itemstacks[3].stackSize += itemStack.stackSize;
 			}
-			if (Consumable(ModItems.ingot, 0, 0)) {
-				if (Consumable(ModItems.ingot, 1, 1)) {
-					this.itemstacks[0].stackSize -= 3;
-					this.itemstacks[1].stackSize -= 1;
-				} else if (Consumable(ModItems.ingot, 1, 9)) {
-					this.itemstacks[0].stackSize -= 3;
-					this.itemstacks[1].stackSize -= 1;
-				}
-			} else if (Consumable(ModItems.ingot, 0, 3)) {
-				if (Consumable(Items.iron_ingot, 1, 2)) {
-					this.itemstacks[0].stackSize -= 1;
-					this.itemstacks[1].stackSize -= 2;
-				}
-			} else {
-				this.itemstacks[0].stackSize -= 1;
-				this.itemstacks[1].stackSize -= 1;
-			}
-			if (this.itemstacks[0].stackSize == 0) {
-				this.itemstacks[0] = null;
-			}
-			if (this.itemstacks[1].stackSize == 0) {
-				this.itemstacks[1] = null;
-			}
+			this.itemstacks[0].stackSize -= AlloyRecipes.alloy().getInputQuanity(this.itemstacks[0]);
+			this.itemstacks[1].stackSize -= AlloyRecipes.alloy().getInputQuanity2(this.itemstacks[1]);
 		}
 	}
 
-	private boolean Consumable(Item item, int par2, int par3) {
-		return this.itemstacks[par2].getItem() == item && this.itemstacks[par2].getItemDamage() == par3;
-	}
-	
 	private boolean canAlloy() {
 		if (this.itemstacks[0] == null || this.itemstacks[1] == null) {
 			return false;
@@ -345,7 +320,7 @@ public class TileEntityAlloySmelter extends TileEntity implements ISidedInventor
 
 	@Override
 	public boolean isItemValidForSlot(int par1, ItemStack par2) {
-		return par1 == 3 ? false : (par1 == 1 ? isItemFuel(par2) : true);
+		return par1 == 3 ? false : (par1 == 2 ? isItemFuel(par2) : true);
 	}
 
 	@Override
@@ -355,13 +330,11 @@ public class TileEntityAlloySmelter extends TileEntity implements ISidedInventor
 
 	@Override
 	public boolean canInsertItem(int par1, ItemStack itemStack, int par2) {
-		// TODO Auto-generated method stub
 		return this.isItemValidForSlot(par1, itemStack);
 	}
 
 	@Override
 	public boolean canExtractItem(int par1, ItemStack itemStack, int par2) {
-		// TODO Auto-generated method stub
 		return par2 != 0 || par1 != 1 || itemStack.getItem() == Items.bucket;
 	}
 

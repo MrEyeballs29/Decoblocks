@@ -23,6 +23,7 @@ public class CommonProxy {
     	ModItems.Finalize();
     	ModBlocks.Finalize();
     	GameRegistry.registerTileEntity(TileEntityAlloySmelter.class, Constants.modID + ":tileEntityAlloySmelter");
+    	GameRegistry.registerWorldGenerator(new WorldGenerationOres(), 2);
     }
 
     public void init(FMLInitializationEvent event) {

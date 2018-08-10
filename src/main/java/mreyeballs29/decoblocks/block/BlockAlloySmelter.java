@@ -42,6 +42,21 @@ public class BlockAlloySmelter extends BlockContainer {
 		this.setResistance(6.0F);
 		this.setLightLevel(this.field_b_2 ? 0.875F : 0.0F);
 	}
+	
+	public void onBlockAdded(World world, int x, int y, int z) {
+		super.onBlockAdded(world, x, y, z);
+		this.direction(world, x, y, z);
+	}
+	
+	@SideOnly(Side.CLIENT)
+	@Override
+	public IIcon getIcon(int side, int meta) {
+		if (meta == 0) {
+			meta = 3;
+		}
+		return side == 0 ? this.top : (side == 1 ? this.top : (side == meta ? this.front : this.blockIcon));
+	}
+	
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerBlockIcons(IIconRegister par1) {
@@ -51,14 +66,18 @@ public class BlockAlloySmelter extends BlockContainer {
 	}
 	
 	@Override
-	public IIcon getIcon(int side, int meta) {
-		return side == 1 ? this.top : (side == 0 ? this.top : (side != meta ? this.blockIcon : this.front));
-	}
-	
-	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par5, float par6, float par7, float par8) {
-		player.openGui(Decoblocks.instance, 0, world, x, y, z);
+		if (world.isRemote) {
 		return true;
+		} else {
+			TileEntityAlloySmelter alloysmelter = (TileEntityAlloySmelter) world.getTileEntity(x, y, z);
+			
+			if (alloysmelter != null) {
+				player.openGui(Decoblocks.instance, 0, world, x, y, z);
+			}
+			
+			return true;
+		}
 	}
 	
 	@Override
@@ -71,12 +90,6 @@ public class BlockAlloySmelter extends BlockContainer {
 		return Item.getItemFromBlock(ModBlocks.alloysmelter);
 	}
 	
-	@SideOnly(Side.CLIENT)
-	public void onBlockAdded(World world, int x, int y, int z) {
-		super.onBlockAdded(world, x, y, z);
-		this.direction(world, x, y, z);
-	}
-	
 	private void direction(World world, int x, int y, int z) {
 		if (!world.isRemote) {
 			Block direction = world.getBlock(x, y, z - 1);
@@ -85,19 +98,19 @@ public class BlockAlloySmelter extends BlockContainer {
 			Block direction3 = world.getBlock(x + 1, y, z);
 			byte byte0 = 3;
 
-			if (direction.func_149730_j() && direction.func_149730_j()) {
+			if (direction.func_149730_j() && !direction1.func_149730_j()) {
 				byte0 = 3;
 			}
 
-			if (direction1.func_149730_j() && direction1.func_149730_j()) {
+			if (direction1.func_149730_j() && !direction.func_149730_j()) {
 				byte0 = 2;
 			}
 
-			if (direction2.func_149730_j() && direction2.func_149730_j()) {
+			if (direction2.func_149730_j() && !direction3.func_149730_j()) {
 				byte0 = 5;
 			}
 
-			if (direction3.func_149730_j() && direction3.func_149730_j()) {
+			if (direction3.func_149730_j() && !direction2.func_149730_j()) {
 				byte0 = 4;
 			}
 
@@ -109,7 +122,7 @@ public class BlockAlloySmelter extends BlockContainer {
     @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityLiving, ItemStack itemStack)
     {
-        final int angle = MathHelper.floor_double(entityLiving.rotationYaw * 4.0F / 360.0F + 0.5D) & 3;
+        int angle = MathHelper.floor_double( (double) (entityLiving.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
 
         if (angle == 0) {
         	world.setBlockMetadataWithNotify(x, y, z, 2, 2);
@@ -146,7 +159,7 @@ public class BlockAlloySmelter extends BlockContainer {
     	}
     	
     	field_b_1 = false;
-    	world.setBlockMetadataWithNotify(x, y, z, direction, 2);
+    	world.setBlockMetadataWithNotify(x, y, z, direction, 3);
     	
     	if (tile != null) {
 			tile.validate();
@@ -182,9 +195,9 @@ public class BlockAlloySmelter extends BlockContainer {
 								entityItem.getEntityItem().setTagCompound((NBTTagCompound) itemStack.getTagCompound().copy());
 							}
 							
-							float f3 = 0.025F;
+							float f3 = 0.05F;
 							entityItem.motionX = (double) ((float) this.field_r_1.nextGaussian() * f3);
-							entityItem.motionY = (double) ((float) this.field_r_1.nextGaussian() * f3 + 0.1F);
+							entityItem.motionY = (double) ((float) this.field_r_1.nextGaussian() * f3 + 0.2F);
 							entityItem.motionZ = (double) ((float) this.field_r_1.nextGaussian() * f3);
 							
 							world.spawnEntityInWorld(entityItem);
@@ -203,22 +216,25 @@ public class BlockAlloySmelter extends BlockContainer {
     	if (this.field_b_2) {
     		int direction = world.getBlockMetadata(x, y, z);
     		
-    		float xx = (float) x + 0.5F, yy = (float) y + random.nextFloat() * 6.0F / 16.0F, zz = (float) z + 0.5F,
-    				xx2 = random.nextFloat() * 0.3F, zz2 = (float) 0.52F;
+    		float xx = (float) x + 0.5F, 
+    			  yy = (float) y + 0.0F + random.nextFloat() * 6.0F / 16.0F, 
+    			  zz = (float) z + 0.5F,
+    			  xx2 = 0.52F,
+    			  zz2 = random.nextFloat() * 0.6F - 0.3F;
             if (direction == 4)
             {
-                world.spawnParticle("smoke", (double)(xx - zz2), (double)yy, (double)(zz + xx2), 0.0D, 0.0D, 0.0D);
-                world.spawnParticle("flame", (double)(xx - zz2), (double)yy, (double)(zz + xx2), 0.0D, 0.0D, 0.0D);
+                world.spawnParticle("smoke", (double)(xx - xx2), (double)yy, (double)(zz + zz2), 0.0D, 0.0D, 0.0D);
+                world.spawnParticle("flame", (double)(xx - xx2), (double)yy, (double)(zz + zz2), 0.0D, 0.0D, 0.0D);
             }
             else if (direction == 5)
             {
-            	world.spawnParticle("smoke", (double)(xx + zz2), (double)yy, (double)(zz + xx2), 0.0D, 0.0D, 0.0D);
-            	world.spawnParticle("flame", (double)(xx + zz2), (double)yy, (double)(zz + xx2), 0.0D, 0.0D, 0.0D);
+            	world.spawnParticle("smoke", (double)(xx + xx2), (double)yy, (double)(zz + zz2), 0.0D, 0.0D, 0.0D);
+            	world.spawnParticle("flame", (double)(xx + xx2), (double)yy, (double)(zz + zz2), 0.0D, 0.0D, 0.0D);
             }
             else if (direction == 2)
             {
-            	world.spawnParticle("smoke", (double)(xx + zz2), (double)yy, (double)(zz + xx2), 0.0D, 0.0D, 0.0D);
-            	world.spawnParticle("flame", (double)(xx + zz2), (double)yy, (double)(zz + xx2), 0.0D, 0.0D, 0.0D);
+            	world.spawnParticle("smoke", (double)(xx + zz2), (double)yy, (double)(zz - xx2), 0.0D, 0.0D, 0.0D);
+            	world.spawnParticle("flame", (double)(xx + zz2), (double)yy, (double)(zz - xx2), 0.0D, 0.0D, 0.0D);
             }
             else if (direction == 3)
             {
@@ -229,7 +245,6 @@ public class BlockAlloySmelter extends BlockContainer {
     }
 	@Override
 	public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
-		// TODO Auto-generated method stub
 		return new TileEntityAlloySmelter();
 	}
 }

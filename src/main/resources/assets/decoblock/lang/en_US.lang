@@ -282,12 +282,13 @@ tile.blockGreenSapphire.name=Block of Green Sapphire
 tile.blockPeridot.name=Block of Peridot
 tile.blockBlueTopaz.name=Block of Blue Topaz
 tile.blockYellowSapphire.name=Block of Yellow Sapphire
-tile.blockAlloySmelterOn.name=Alloy Smelter [WIP (Don't Use)]
-tile.blockAlloySmelter.name=Alloy Smelter [WIP (Don't Use)]
-container.alloysmelter=Alloy Smelter [WIP]tile.oreSapphire.name=Sapphire Ore
+tile.oreSapphire.name=Sapphire Ore
 tile.oreTopaz.name=Topaz Ore
 tile.oreAmethyst.name=Amethyst Ore
 tile.oreGreenSapphire.name=Green Sapphire Ore
 tile.orePeridot.name=Peridot Ore
 tile.oreBlueTopaz.name=Blue Topaz Ore
 tile.oreYellowSapphire.name=Yellow Sapphire Ore
+tile.blockAlloySmelterOn.name=Alloy Smelter
+tile.blockAlloySmelter.name=Alloy Smelter
+container.alloysmelter=Alloy Smelter

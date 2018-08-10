@@ -2,12 +2,10 @@ package mreyeballs29.decoblocks.inventory;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import mreyeballs29.decoblocks.item.ModItems;
 import mreyeballs29.decoblocks.recipe.AlloyRecipes;
 import mreyeballs29.decoblocks.tileentity.TileEntityAlloySmelter;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
@@ -46,13 +44,13 @@ public class ContainerAlloySmelter extends Container {
 		super.addCraftingToCrafters(crafter);
 		crafter.sendProgressBarUpdate(this, 0, this.alloysmeltertile.alloyCookTime);
 		crafter.sendProgressBarUpdate(this, 1, this.alloysmeltertile.furnaceBurnTime);
-		crafter.sendProgressBarUpdate(this, 2, this.lastItemBurnTime);
+		crafter.sendProgressBarUpdate(this, 2, this.alloysmeltertile.currentItemBurnTime);
 	}
 	
 	@Override
 	public void detectAndSendChanges() {
 		super.detectAndSendChanges();
-		for (int i = 0; i < this.crafters.size(); i++) {
+		for (int i = 0; i < this.crafters.size(); ++i) {
 			ICrafting craft = (ICrafting) this.crafters.get(i);
 			
 			if (this.lastAlloyTime != this.alloysmeltertile.alloyCookTime) {
@@ -60,11 +58,11 @@ public class ContainerAlloySmelter extends Container {
 			}
 			
 			if (this.lastBurnTime != this.alloysmeltertile.furnaceBurnTime) {
-				craft.sendProgressBarUpdate(this, 0, this.alloysmeltertile.furnaceBurnTime);
+				craft.sendProgressBarUpdate(this, 1, this.alloysmeltertile.furnaceBurnTime);
 			}
 			
 			if (this.lastItemBurnTime != this.alloysmeltertile.currentItemBurnTime) {
-				craft.sendProgressBarUpdate(this, 0, this.alloysmeltertile.currentItemBurnTime);
+				craft.sendProgressBarUpdate(this, 2, this.alloysmeltertile.currentItemBurnTime);
 			}
 			
 			this.lastBurnTime = this.alloysmeltertile.furnaceBurnTime;
@@ -92,13 +90,6 @@ public class ContainerAlloySmelter extends Container {
 		return this.alloysmeltertile.isUseableByPlayer(player);
 	}
 	
-	@SuppressWarnings("unused")
-	private int BasedOnAlloy(int par2) {
-		Slot slot = (Slot) this.inventorySlots.get(1);
-		return slot.slotNumber != par2 ? 1 : 0;
-	}
-	
-	
 	@Override
 	public ItemStack transferStackInSlot(EntityPlayer player, int par2) {
 		ItemStack itemStack = null;
@@ -114,20 +105,23 @@ public class ContainerAlloySmelter extends Container {
 				};
 				slot.onSlotChange(itemStack1, itemStack);
 			} else if (par2 != 1 && par2 != 0 && par2 != 2) {
-				if(AlloyRecipes.alloy().getOutput(itemStack1, new ItemStack(Items.iron_ingot, 1, 0)) != null) {
+				if(AlloyRecipes.alloy().FindOutput(itemStack1) != null) {
 					if (!this.mergeItemStack(itemStack1, 0, 1, false)) {
 						return null;
 					};
+				} else if (AlloyRecipes.alloy().FindOutput2(itemStack1) != null) {
+					if (!this.mergeItemStack(itemStack1, 1, 2, false)) {
+						return null;
+					}
 				} else if (TileEntityAlloySmelter.isItemFuel(itemStack1)) {
-					if (!this.mergeItemStack(itemStack1, 2, 2, false)) {
+					if (!this.mergeItemStack(itemStack1, 2, 3, false)) {
 						return null;
 					};
-					
 				} else if (par2 >= 4 && par2 < 31) {
 					if (!this.mergeItemStack(itemStack1, 31, 40, false)) {
 						return null;
 					}
-				} else if (par2 >= 30 && par2 < 40 && !this.mergeItemStack(itemStack1, 4, 31, false)) {
+				} else if (par2 >= 31 && par2 < 40 && !this.mergeItemStack(itemStack1, 4, 31, false)) {
 					return null;
 				};
 			} else if (!this.mergeItemStack(itemStack1, 4, 40, false)) {
