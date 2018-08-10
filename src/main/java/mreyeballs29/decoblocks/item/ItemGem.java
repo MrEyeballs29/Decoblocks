@@ -23,14 +23,14 @@ public class ItemGem extends Item {
 	};
 	
 	private String[] UnlocalizedGEM = {
-			"Ruby",
-			"Sapphire",
-			"Topaz",
-			"Amethyst",
-			"GreenSapphire",
-			"Peridot",
-			"BlueTopaz",
-			"YellowSapphire"
+			"ruby",
+			"sapphire",
+			"topaz",
+			"amethyst",
+			"greenSapphire",
+			"peridot",
+			"blueTopaz",
+			"yellowSapphire"
 	};
 	
 	protected IIcon[] icons = new IIcon[8];
@@ -49,7 +49,7 @@ public class ItemGem extends Item {
 	
 	@Override
 	public String getUnlocalizedName(ItemStack item) {
-		return "item.gem" + UnlocalizedGEM[item.getItemDamage() < 8 ? item.getItemDamage() : 0];
+		return "item." + UnlocalizedGEM[item.getItemDamage() < 8 ? item.getItemDamage() : 0];
 	}
 	
 	@Override
