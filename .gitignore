@@ -33,3 +33,4 @@ gradlew.bat
 *.lock
 .gradle/2.14/taskArtifacts/cache.properties
 build.bat
+.settings/org.eclipse.ltk.core.refactoring.prefs
