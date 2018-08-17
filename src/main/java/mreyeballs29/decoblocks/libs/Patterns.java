@@ -37,7 +37,7 @@ public class Patterns {
 		GameRegistry.addRecipe(new ItemStack(block, 4, 1), new Object[] {"AA", "AA", 'A', new ItemStack(block, 1, 0)});
 		GameRegistry.addRecipe(new ItemStack(block, 4, 4), new Object[] {"AB", "BA", 'A', new ItemStack(block, 1, 1), 'B', new ItemStack(block, 1, 0)});
 		GameRegistry.addRecipe(new ItemStack(block, 4, 4), new Object[] {"BA", "AB", 'A', new ItemStack(block, 1, 1), 'B', new ItemStack(block, 1, 0)});
-		GameRegistry.addRecipe(new ItemStack(block, 4, 5), new Object[] {"AA", "AA", 'A', new ItemStack(block, 1, 5)});
+		GameRegistry.addRecipe(new ItemStack(block, 4, 5), new Object[] {"AA", "AA", 'A', new ItemStack(block, 1, 4)});
 		GameRegistry.addRecipe(new ItemStack(block, 4, 6), new Object[] {"AA", "AA", 'A', new ItemStack(block, 1, 1)});
 		GameRegistry.addRecipe(new ItemStack(block, 2, 7), new Object[] {"A ", " A", 'A', new ItemStack(block, 1, 0)});
 		GameRegistry.addRecipe(new ItemStack(block, 2, 8), new Object[] {" A", "A ", 'A', new ItemStack(block, 1, 0)});
@@ -46,7 +46,7 @@ public class Patterns {
 		GameRegistry.addRecipe(new ItemStack(block, 2, 11), new Object[] {"A ", " A", 'A', new ItemStack(block, 1, 3)});
 		GameRegistry.addRecipe(new ItemStack(block, 2, 12), new Object[] {" A", "A ", 'A', new ItemStack(block, 1, 3)});
 		GameRegistry.addShapelessRecipe(new ItemStack(block, 1, 10), new Object[] {new ItemStack(block, 1, 3), ModItems.polish});
-		GameRegistry.addShapelessRecipe(new ItemStack(block, 1, 2), new Object[] {new ItemStack(block, 1, 11), ModItems.polish});
+		GameRegistry.addShapelessRecipe(new ItemStack(block, 1, 2), new Object[] {new ItemStack(block, 1, 10), ModItems.polish});
 		GameRegistry.addSmelting(new ItemStack(block, 1, 0), new ItemStack(block, 1, 3), 0.1F);
 	}
 	public static void StonePatternShaper(Block block, Block block2, Block block3) {
@@ -62,8 +62,8 @@ public class Patterns {
 		GameRegistry.addRecipe(new ItemStack(block, 2, 6), new Object[] {" A", "A ", 'A', new ItemStack(block3)});
 		GameRegistry.addRecipe(new ItemStack(block, 4, 7), new Object[] {"AB", "BA", 'A', new ItemStack(block2, 1, 0), 'B', new ItemStack(block, 1, 2)});
 		GameRegistry.addRecipe(new ItemStack(block, 4, 7), new Object[] {"BA", "AB", 'A', new ItemStack(block2, 1, 0), 'B', new ItemStack(block, 1, 2)});
-		GameRegistry.addRecipe(new ItemStack(block, 2, 13), new Object[] {"A ", " A", 'A', new ItemStack(block, 1, 0)});
-		GameRegistry.addRecipe(new ItemStack(block, 2, 14), new Object[] {" A", "A ", 'A', new ItemStack(block, 1, 0)});
+		GameRegistry.addRecipe(new ItemStack(block, 2, 9), new Object[] {"A ", " A", 'A', new ItemStack(block, 1, 0)});
+		GameRegistry.addRecipe(new ItemStack(block, 2, 10), new Object[] {" A", "A ", 'A', new ItemStack(block, 1, 0)});
 		GameRegistry.addShapelessRecipe(new ItemStack(block2, 1, 2), new Object[] {new ItemStack(block2, 1, 0), ModItems.hammer});
 		GameRegistry.addShapelessRecipe(new ItemStack(block, 1, 8), new Object[] {new ItemStack(block, 1, 0), ModItems.polish});
 		GameRegistry.addShapelessRecipe(new ItemStack(block2, 1, 3), new Object[] {new ItemStack(block, 1, 8), ModItems.polish});

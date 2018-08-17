@@ -51,7 +51,7 @@ public final class ShapedCrafting {
 		}
 		for (int i = 0; i < 8; i++) {
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.storagegemblock, 1, i), new Object[] {"ZZZ", "ZZZ", "ZZZ", 'Z', Names.GemUnlocalizedName(Names.GEMS[i])}));
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.gem, 9, i), new Object[] {"Z", 'Z', Names.MetalUnlocalizedName(Names.GEMS[i], 5)}));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.gem, 9, i), new Object[] {"Z", 'Z', Names.MetalUnlocalizedName(Names.GEMS[i], 4)}));
 		}
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.alloysmelter), new Object[] {"AAA", "BAB", "AAA", 'A', Blocks.cobblestone, 'B', Blocks.furnace});
 		Patterns.RockPatternShaper(ModBlocks.porcelainblock);
