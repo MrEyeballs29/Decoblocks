@@ -5,6 +5,7 @@ Version 1.4.0 Final
 - Added A Basic Alloy Smelter Which alloys metals
 - Fixed Several Recipes
 - A Real final version before 1.10+
+- Removed Some Items Too.
 
 Version 1.3.0 Final
 - A final version before 1.10+
